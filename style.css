@@ -1,0 +1,181 @@
+
+@font-face {
+  font-family: 'SEGA';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SEGA LOGO FONT'), url('fonts/SEGA.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Press Start';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Press Start 2P'), url('fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+
+
+:root {
+  font-family: 'Press Start', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --clr-txt-red: #fc0808;
+  --clr-drk-blue: #213547;
+  --clr-white: #e3e3e3;
+  --clr-black: black;
+}
+
+/* estilos para etiquetas en general */
+
+
+/* estilos relacionados con los display */
+
+.flex{
+  display: flex;
+}
+
+.align-even{
+  align-items: space-evenly;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align-end{
+  align-items: flex-end;
+}
+
+/* paddings y margins */
+
+.padding-1{
+  padding: 20px
+}
+
+/* estilos relacionados con las listas y los nav */
+.ls-none{
+  list-style: none;
+  padding-left: 0;
+}
+
+/* estilos relacionados con los bordes */
+.brdr-rd{
+  border-radius: 0.5em;
+}
+
+.brdr-rd-small{
+  border-radius: 0.2em;
+}
+
+.brdr-red{
+  border-color: var(--clr-txt-red);
+}
+
+.border{
+  border-style: solid;
+}
+
+.brdr-red-black{
+  border: 2px solid var(--clr-black);
+  box-shadow: 0 0 0 2.5px var(--clr-txt-red);
+}
+
+/* estilos relacionados con el texto */
+
+.red-text{
+  color: var(--clr-txt-red);
+}
+
+.sega-font{
+  font-family: 'SEGA', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.letter-spacing-1{
+  letter-spacing: 0.2em;
+}
+
+.letter-spacing-2{
+  letter-spacing: 0.1em;
+}
+
+.text-big-1{
+  font-size: 1.2em;
+}
+/* colores de fondo */
+
+.dark-blue-bg{
+  background-color: var(--clr-drk-blue);
+}
+
+.white-bg{
+  background-color: var(--clr-white);
+}
+
+/* estilos específicos */
+
+.h2-carr{
+  position: relative;
+  height: 400px;
+}
+
+.h2-carr h2{
+  z-index: 1;
+  font-size: 4em;
+}
+
+.h2-carr::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%; 
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); 
+  z-index: -1;
+  border-radius: 0.5em;
+}
+
+
+.carr-img{
+  height: 100%;
+  width: 100%;
+  top:0;
+  left: 0;
+  position: absolute;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-image: url(public/arcades_galeria/1.webp);
+  filter: blur(1px); 
+  mix-blend-mode:normal;
+  transition: opacity 0.5s; 
+}
+
+@media (prefers-color-scheme: light) { /* hay que arreglar el color del nav para modo light */
+  :root {
+    color: #213547;
+    background-color: var(--clr-white);
+  }
+  .h2-carr::before {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); 
+  }
+}
