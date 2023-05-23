@@ -4,10 +4,10 @@ import './reset.css'
 // carrusel arcades
 
 const imagenes_arcades = [
-    'public/arcades_galeria/1.webp',
-    'public/arcades_galeria/2.webp',
-    'public/arcades_galeria/3.webp',
-    'public/arcades_galeria/4.webp',
+    '/arcades_galeria/1.webp',
+    '/arcades_galeria/2.webp',
+    '/arcades_galeria/3.webp',
+    '/arcades_galeria/4.webp',
 ];
 
 let currentImageIndex = 0;
@@ -54,3 +54,31 @@ nextButton.addEventListener('click', () => {
 });
 
 setInterval(autoChangeImage, 5000); 
+
+const arcades_paneles = document.querySelectorAll('.hover-img-gradient');
+
+arcades_paneles.forEach((arcade) => {
+  arcade.addEventListener('click', (event) => {
+    const oculto = arcade.querySelector('.hidden');
+    const ocultar = arcade.querySelector('.gradient-up');
+    arcade.classList.remove('hover-img-gradient');
+    arcade.classList.add('panel_img_extended');
+    oculto.classList.remove('hidden');
+    ocultar.classList.add('hidden');
+    arcade.classList.remove('pointer');
+
+    arcade.style.width = '100%';
+    arcade.style.height = '90vh';
+
+    // Obtener el ID del destino deseado
+    const href = arcade.getAttribute('href');
+
+    // Obtener el elemento del destino
+    const targetElement = document.querySelector(href);
+
+    // Hacer scroll hacia el elemento objetivo
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});

@@ -38,11 +38,38 @@
 
 /* estilos para etiquetas en general */
 
+main{
+  padding: 5vw;
+}
 
 /* estilos relacionados con los display */
 
+.hidden{
+  display: none !important;
+}
+
+.sticky{
+  position: sticky;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.relative{
+  position: relative;
+}
+
+.absolute{
+  position:absolute;
+}
+
 .flex{
   display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
 }
 
 .align-even{
@@ -59,6 +86,15 @@
 
 .align-end{
   align-items: flex-end;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.top-left-0{
+  top:0;
+  left: 0;
 }
 
 /* paddings y margins */
@@ -93,6 +129,40 @@
 .brdr-red-black{
   border: 2px solid var(--clr-black);
   box-shadow: 0 0 0 2.5px var(--clr-txt-red);
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+/* estilos que se añaden con javascript */
+
+.panel_img_extended{
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divide el espacio en 2 columnas */
+  grid-template-rows: 1fr 1fr; /* Una fila */
+  gap: 10px; /* Espacio entre los elementos */
+  background-color: green;
+}
+
+.panel_img_extended .panel-img{
+  grid-column: 1; /* Ocupa la primera columna */
+  grid-row: 1; /* Ocupa la primera fila */
+  background-color: aqua;
+}
+
+.prueba{
+  grid-column: 1; /* Ocupa la primera columna */
+  grid-row: 2; /* Ocupa la segunda fila */
+  background-color: blue;
+}
+
+.prueba-2{
+  grid-column: 2; /* Ocupa la segunda columna */
+  grid-row: 1 / span 2; /* Ocupa la primera y segunda fila */
+  background-color: rebeccapurple;
 }
 
 /* estilos relacionados con el texto */
@@ -132,6 +202,10 @@
 
 /* estilos específicos */
 
+.pointer:hover{
+  cursor: pointer;
+}
+
 .h2-carr{
   position: relative;
   height: 400px;
@@ -164,10 +238,153 @@
   z-index: -2;
   background-size: cover;
   background-position: center;
-  background-image: url(public/arcades_galeria/1.webp);
+  background-image: url(/arcades_galeria/1.webp);
   filter: blur(1px); 
   mix-blend-mode:normal;
   transition: opacity 0.5s; 
+}
+
+.gradient-up{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); 
+  height: calc(100% - 5px);
+  width: calc(100%-5px);
+  z-index: 3;
+  opacity: 0;
+  top: 200px;
+  transition: all 0.3s ease-in-out;
+  top: 5px;
+  right:5px;
+  left: 5px;
+  bottom: 5px;
+}
+
+.hover-img-gradient:hover .gradient-up{
+  top: 0;
+  opacity: 1;
+}
+
+.hover-img-gradient{
+  background-color: #00000000;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.padding-margin-provisionales{
+  padding: 5px;
+  margin: 10px;
+}
+
+.hover-img-gradient::before{
+  content: "";
+  position: absolute;
+  background-color: var(--clr-txt-red);
+  height: 0%;
+  width: 0%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.hover-img-gradient:hover::before{
+  transform-origin: right;
+  animation: reveal-gradient 0.2s ease-in-out forwards;
+}
+
+.hover-img-gradient:not(:hover)::before{
+  animation: reveal-gradient-reverse 0.2s ease-in-out;
+}
+
+.hover-img-gradient:hover .boing-anim{
+  animation: floating-animation 0.8s ease-in-out infinite alternate;
+}
+
+.coin-anim{
+  bottom: -50px;
+  left: 10px;
+  z-index:5;
+}
+
+.hover-img-gradient:hover .coin-anim{
+  animation: coin-animation 0.6s ease-in;
+}
+
+.height-width-transition{
+  transition: width 0.5s ease, height 0.5s ease !important;
+}
+
+.boing-anim-perma{
+  animation: floating-animation 0.8s ease-in-out infinite alternate; 
+}
+
+.car-bg{
+  background-image: url(background-car.gif);
+  background-size: cover;
+}
+
+@keyframes coin-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes reveal-gradient-reverse {
+  0% {
+    height: 100%;
+    width: 100%;
+  }
+  25% {
+    height: 75%;
+    width: 75%;
+  }
+  50% {
+    width: 50%;
+    height: 50%;
+  }
+  75% {
+    width: 25%;
+    height: 25%;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes reveal-gradient {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  25% {
+    width: 25%;
+    height: 25%;
+  }
+  50% {
+    width: 50%;
+    height: 50%;
+  }
+  75% {
+    height: 75%;
+    width: 75%;
+  }
+  100% {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 @media (prefers-color-scheme: light) { /* hay que arreglar el color del nav para modo light */
