@@ -34,12 +34,25 @@
   --clr-drk-blue: #213547;
   --clr-white: #e3e3e3;
   --clr-black: black;
+
+  --header-height: 100px;
 }
 
 /* estilos para etiquetas en general */
 
 main{
   padding: 5vw;
+}
+
+header{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: var(--header-height);
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
 }
 
 /* estilos relacionados con los display */
@@ -103,6 +116,10 @@ main{
   padding: 20px
 }
 
+.padding-2{
+  padding: 5px;
+}
+
 /* estilos relacionados con las listas y los nav */
 .ls-none{
   list-style: none;
@@ -133,6 +150,18 @@ main{
 
 .overflow-hidden{
   overflow: hidden;
+}
+
+.brdr-black-blue {
+  border-left: 5px solid #005464;
+  border-top: 10px solid #001317;
+  border-bottom: 10px solid #001317;
+  border-right: 5px solid #005464;
+}
+
+.brder-lr-grey{
+  border-left: 3px solid grey;
+  border-right: 3px solid grey;
 }
 
 /* estilos que se añaden con javascript */
@@ -190,6 +219,11 @@ main{
 .text-big-1{
   font-size: 1.2em;
 }
+
+.nav-text-size{
+  font-size: 0.75em;
+}
+
 /* colores de fondo */
 
 .dark-blue-bg{
@@ -198,6 +232,10 @@ main{
 
 .white-bg{
   background-color: var(--clr-white);
+}
+
+.light-blue-bg{
+  background-color: #0095b1;
 }
 
 /* estilos específicos */
@@ -318,6 +356,53 @@ main{
 .car-bg{
   background-image: url(background-car.gif);
   background-size: cover;
+}
+
+.pacman-gif{
+  height: 15px;
+  width: auto;
+}
+
+.ghost-gif{
+  height: 15px;
+  width: auto;
+}
+
+.header-img{
+  height: 45px;
+  width: auto;
+}
+
+.bolita{
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color:black;
+  margin:1px;
+}
+
+.nav-logo-wrapper{
+  height: 55px;
+  width: 225px;
+}
+
+.header-pacman-wrapper{
+
+}
+
+.logo-1{
+  height: 60%;
+  font-size: 20px;
+}
+
+.red-hover:hover{
+  color: var(--clr-txt-red);
+}
+
+.mario-link{
+  bottom: -100px;
+  height: 20px;
+  width: auto;
 }
 
 @keyframes coin-animation {
