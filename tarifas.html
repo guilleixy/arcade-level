@@ -5,20 +5,73 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARCADE LEVELS</title>
+    <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   </head>
   <body>
-    <header class="flex">
-      <h1 class="sega-font text-center red-text white-bg brdr-red-black brdr-rd-small">ARCADE LEVELS</h1>
-      <nav>
-          <ul class="ls-none flex align-center justify-center dark-blue-bg">
-              <li>Horarios</li>
-              <li>Tarifas</li>
-              <li>Galería imágenes</li>
-              <li>Nuestros juegos</li>
-              <li>Reservas</li>
-              <li>CompraVenta y Reparaciones</li>
-              <li>Contacto</li>
+    <header class="flex align-center dark-blue-bg justify-center">
+     
+      <div class=" white-bg brdr-red-black brdr-rd-small pointer flex align-center justify-center nav-logo-wrapper">
+        <div>
+          <h1 class="sega-font text-center red-text logo-1">ARCADE LEVELS</h1>
+          <div class="flex header-pacman-wrapper">
+            <img class="pacman-gif" src="pacman.gif" alt="pacman">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+          </div>
+        </div>
+        <img class="header-img" src="logo-arcade.png" alt="logo-arcade">
+      </div>
+      
+      <nav class="flex">
+          <ul class="ls-none flex align-center justify-center nav-text-size text-center mage-font">
+              <button class="padding-login-nav flex align-center justify-center"><i class="fa-solid fa-circle-user"></i> Iniciar Sesión</button>
+              <li class="padding-li-nav"><a class="dk-underline" href="horarios.html">Horarios</a></li>
+              <li  class="padding-li-nav"><a class="dk-underline-perm" href="tarifas.html">Tarifas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="galeria.html">Galería imágenes</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="index.html">Nuestros juegos</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="reservas.html">Reservas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="compraventa.html">CompraVenta y Reparaciones</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="contacto.html">Contacto</a></li>
           </ul>
+          <div class="flex align-center justify-center">
+            <div class="relative">
+              <i class="fa-brands fa-youtube red-hover pointer"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </div>
+            <div class="relative">
+              <i class="fa-brands fa-instagram red-hover pointer"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </div>
+            <div class="relative">
+              <i class="fa-brands fa-tiktok red-hover pointer"></i>
+              <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </div>
+          </div>
       </nav>
     </header>
   
@@ -29,7 +82,11 @@
           <div class="flex flex-column light-blue-bg">
             <h3 class="text-center brdr-black-blue">Entrada normal</h3>
             <img src="tarifas/adultos.webp" alt="tarifas-adultos">
-            <img src="tarifas/marquesinas/adultos.svg">
+            <div class="relative">
+              <img src="tarifas/marquesinas/adultos.svg" id="adultos">
+              <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute" draggable="false" id="joystick">
+            </div>
+
             <p>Entrada general: 15€</p>
             <h4>Condiciones:</h4>
             <p>Entrada válida para mayores de 8 años</p>
@@ -45,6 +102,7 @@
       <!-- Aquí puedes agregar el contenido del pie de página -->
     </footer>
   
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="/arcade.js"></script>
+    <script type="module" src="/imports.js"></script>
   </body>
 </html>

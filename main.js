@@ -1,6 +1,3 @@
-import './style.css'
-import './reset.css'
-
 // carrusel arcades
 
 const imagenes_arcades = [

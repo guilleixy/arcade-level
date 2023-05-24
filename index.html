@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARCADE LEVELS</title>
     <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   </head>
   <body>
     <header class="flex align-center dark-blue-bg justify-center">
@@ -47,28 +48,32 @@
       </div>
       
       <nav class="flex">
-          <ul class="ls-none flex align-center justify-center nav-text-size text-center">
-              <img src="" alt="">
-              <button>Iniciar Sesión</button>
-              <li><a href="horarios.html">Horarios</a></li>
-              <li><a href="tarifas.html">Tarifas</a></li>
-              <li><a href="galeria.html">Galería imágenes</a></li>
-              <li><a href="index.html">Nuestros juegos</a></li>
-              <li><a href="reservas.html">Reservas</a></li>
-              <li><a href="compraventa.html">CompraVenta y Reparaciones</a></li>
-              <li><a href="contacto.html">Contacto</a></li>
+          <ul class="ls-none flex align-center justify-center nav-text-size text-center mage-font">
+              <button class="padding-login-nav flex align-center justify-center"><i class="fa-solid fa-circle-user"></i> Iniciar Sesión</button>
+              <li class="padding-li-nav"><a class="dk-underline" href="horarios.html">Horarios</a></li>
+              <li  class="padding-li-nav"><a class="dk-underline" href="tarifas.html">Tarifas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="galeria.html">Galería imágenes</a></li>
+              <li class="padding-li-nav"><a class="dk-underline-perm" href="index.html">Nuestros juegos</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="reservas.html">Reservas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="compraventa.html">CompraVenta y Reparaciones</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="contacto.html">Contacto</a></li>
           </ul>
-          <div class="relative">
-            <i class="fa-brands fa-youtube red-hover pointer"></i>
-            <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
-          </div>
-          <div class="relative">
-            <i class="fa-brands fa-instagram red-hover pointer"></i>
-            <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
-          </div>
-          <div class="relative">
-            <i class="fa-brands fa-tiktok red-hover pointer"></i>
-            <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+          <div class="flex align-center justify-center overflow-hidden">
+            <a href="https://www.youtube.com/c/ArcadeLevels" target="_blank" class="relative brick-wrapper red-hover pointer">
+              <img height="10px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-youtube brick-bounce"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.instagram.com/arcade_levels/" target="_blank" class="relative brick-wrapper red-hover pointer">
+              <img height="10px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-instagram brick-bounce"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.tiktok.com/@arcade_levels" target="_blank" class="relative brick-wrapper red-hover pointer">
+              <img height="10px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-tiktok brick-bounce"></i>
+              <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
           </div>
       </nav>
     </header>
@@ -178,5 +183,6 @@
     </footer>
   
     <script type="module" src="/main.js"></script>
+    <script type="module" src="/imports.js"></script>
   </body>
 </html>
