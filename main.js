@@ -63,19 +63,9 @@ arcades_paneles.forEach((arcade) => {
     oculto.classList.remove('hidden');
     ocultar.classList.add('hidden');
     arcade.classList.remove('pointer');
+    arcade.classList.remove('inline-block');
 
-    arcade.style.width = '100%';
-    arcade.style.height = '90vh';
+    arcade.classList.add('animacion-div');
 
-    // Obtener el ID del destino deseado
-    const href = arcade.getAttribute('href');
-
-    // Obtener el elemento del destino
-    const targetElement = document.querySelector(href);
-
-    // Hacer scroll hacia el elemento objetivo
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
   });
 });

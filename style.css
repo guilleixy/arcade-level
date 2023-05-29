@@ -21,6 +21,12 @@
   src: local('DiaryOfAn8BitMage'), url('fonts/DiaryOfAn8BitMage-lYDD.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Mario Bros NES';
+  font-style: normal;
+  font-weight: normal;
+  src: local('super-mario-bros-nes'), url('fonts/super-mario-bros-nes.ttf') format('truetype');
+}
 
 :root {
   font-family: 'Press Start', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -43,6 +49,7 @@
   --clr-black: black;
 
   --header-height: 100px;
+  --footer-height: 100px;
 }
 
 /* estilos para etiquetas en general */
@@ -60,6 +67,11 @@ header{
 a{
   text-decoration: none;
   color: inherit;
+}
+
+footer{
+  height: var(--footer-height);
+  font-size: 10px;
 }
 
   /*font-family: Raleway , system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
@@ -119,6 +131,35 @@ a{
   left: 0;
 }
 
+.height-10{
+  height: 10%;
+}
+
+.height-30{
+  height: 30%;
+}
+
+.height-40{
+  height: 40%;
+}
+
+.height-25{
+  height: 25%;
+}
+
+.max-height{
+  max-height: 100%;
+  width: auto;
+}
+
+.max-width{
+  max-width: 100%;
+  height: auto;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
 /* paddings y margins */
 
 .padding-1{
@@ -136,6 +177,11 @@ a{
 
 .padding-login-nav{
   margin: 15px;
+}
+
+.lr-no-padding{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* estilos relacionados con las listas y los nav */
@@ -171,10 +217,13 @@ a{
 }
 
 .brdr-black-blue {
-  border-left: 5px solid #005464;
-  border-top: 10px solid #001317;
-  border-bottom: 10px solid #001317;
-  border-right: 5px solid #005464;
+  border-top: 20px solid #001317;
+  border-bottom: 20px solid #001317;
+}
+
+.brdr-blue-lr{
+  border-left: 15px solid #005464;
+  border-right: 15px solid #005464;
 }
 
 .brder-lr-grey{
@@ -188,27 +237,28 @@ a{
   background-color: var(--clr-white);
   color: var(--clr-black);
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Divide el espacio en 2 columnas */
-  grid-template-rows: 1fr 1fr; /* Una fila */
+  grid-template-columns: 1fr 1fr; /* Dos columnas con ancho flexible */
+  grid-template-rows: 1fr 1fr; 
   gap: 10px; /* Espacio entre los elementos */
   background-color: green;
 }
 
-.panel_img_extended .panel-img{
+.prueba-3{
   grid-column: 1; /* Ocupa la primera columna */
   grid-row: 1; /* Ocupa la primera fila */
   background-color: aqua;
+  max-width: 100%;
 }
 
 .prueba{
-  grid-column: 1; /* Ocupa la primera columna */
-  grid-row: 2; /* Ocupa la segunda fila */
+  grid-column: 1; 
+  grid-row: 2; /* Ocupa las filas 1 y 2 */
   background-color: blue;
 }
 
 .prueba-2{
   grid-column: 2; /* Ocupa la segunda columna */
-  grid-row: 1 / span 2; /* Ocupa la primera y segunda fila */
+  grid-row: 1; /* Ocupa la primera fila */
   background-color: rebeccapurple;
 }
 
@@ -316,6 +366,10 @@ a{
   right:5px;
   left: 5px;
   bottom: 5px;
+}
+
+.animacion-div {
+  transition: width 0.5s, height 0.5s; /* Duración de la animación: 0.5 segundos */
 }
 
 .hover-img-gradient:hover .gradient-up{
@@ -468,6 +522,107 @@ a{
 
 .brick-wrapper:hover .coin-nav{
   animation: 0.5s coin-nav-anim 0.3s;
+}
+
+.bg-adultos{
+  background-image: url(tarifas/adultos/1.webp);
+  background-size: cover;
+}
+
+.bg-infantil{
+  background-image: url(tarifas/infantil/1.webp);
+  background-size: cover;
+}
+
+#coin-counter-wrapper{
+  top: var(--header-height);
+  font-family: 'Mario Bros NES', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.counter-coin.animate{
+  animation: 0.7s coin-counter-anim;
+} 
+
+.arcade-dim{
+  height: 700px;
+  width: 314px;
+}
+
+.container-provisional{
+  background-color: #615d5d;
+  display: flex;
+}
+
+
+.container-provisional-dim{
+  height: 100px;
+  width: 500px;
+}
+
+.container-provisional-dim-2{
+  width: 90%;
+  height: 60vh;
+}
+
+.size-provisional{
+  height: 30px;
+  width: 40px;
+}
+
+.sld-wrp {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.slider-for {
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.slide-container {
+  height: 400px;
+  width: 100%;
+}
+
+.slide-cointainer-img{
+  max-height: 100% !important;
+  width: auto !important;
+}
+
+.slide-btn {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.slide-btn:hover {
+  background-color: rgb(255, 179, 0);
+}
+
+/* estilos de las arcades de tarifas */
+
+#joystick{
+  top: -25px;
+  left: 33px;
+}
+
+@keyframes coin-counter-anim{
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(-4px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(-1.5px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
 }
 
 @keyframes coin-nav-anim{

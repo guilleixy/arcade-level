@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/jpeg" href="/icon.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARCADE LEVELS</title>
     <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
@@ -59,23 +59,26 @@
               <li class="padding-li-nav"><a class="dk-underline" href="contacto.html">Contacto</a></li>
           </ul>
           <div class="flex align-center justify-center overflow-hidden">
-            <a href="https://www.youtube.com/c/ArcadeLevels" target="_blank" class="relative brick-wrapper red-hover pointer">
+            <a href="https://www.youtube.com/c/ArcadeLevels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
               <img height="10px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
-              <i class="fa-brands fa-youtube brick-bounce"></i>
+              <i class="fa-brands fa-youtube brick-bounce" id="coin-add"></i>
               <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
             </a>
-            <a href="https://www.instagram.com/arcade_levels/" target="_blank" class="relative brick-wrapper red-hover pointer">
+            <a href="https://www.instagram.com/arcade_levels/" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
               <img height="10px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
-              <i class="fa-brands fa-instagram brick-bounce"></i>
+              <i class="fa-brands fa-instagram brick-bounce" id="coin-add"></i>
               <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
             </a>
-            <a href="https://www.tiktok.com/@arcade_levels" target="_blank" class="relative brick-wrapper red-hover pointer">
+            <a href="https://www.tiktok.com/@arcade_levels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
               <img height="10px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
-              <i class="fa-brands fa-tiktok brick-bounce"></i>
+              <i class="fa-brands fa-tiktok brick-bounce" id="coin-add"></i>
               <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
             </a>
           </div>
       </nav>
+      <div class="absolute flex align-center" id="coin-counter-wrapper">
+        <img class="counter-coin" height="20px" src="coin.png" alt="coin" draggable="false"><div>x</div><div id="coin-counter"></div><div>¡Ayúdanos a conseguir 1 Millón de Monedas</div>
+      </div>
     </header>
   
     <main>
@@ -91,12 +94,12 @@
             </div>
             <div>
               <div class="relative inline-block hover-img-gradient overflow-hidden brdr-rd-small pointer padding-margin-provisionales">
-                <img class="panel-img" src="/arcades_juegos/outrun_panel.webp" alt="SEGA OUTRUN">
+                <img class="panel-img prueba-3" src="/arcades_juegos/outrun_panel.webp" alt="SEGA OUTRUN">
                 <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim">Sega OutRun</span></div>
                 <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
                 <div class="hidden">
                   <div class="prueba">
-                    <div></div>
+                    <div>hola!</div>
                   </div>
                   <div class="prueba-2">
                     <h2 class="boing-anim-perma">OutRun</h2>
@@ -178,11 +181,20 @@
       </section>
     </main>
   
-    <footer>
-      <!-- Aquí puedes agregar el contenido del pie de página -->
+    <footer class="dark-blue-bg flex flex-column align-center justify-center">
+      <div class="flex">
+        <a><i class="fa-solid fa-house"></i> Carretera Valencia KM 7.8 Nave 72A  -  50410  -  Cuarte de Huerva  -  Zaragoza</a>
+        <a><i class="fa-solid fa-phone"></i> +34  663 624 29</div>
+        <a><i class="fa-solid fa-envelope"></i> contacto@arcadelevels.com</a>
+      </div>
+      <div class="flex">
+        <div>Arcade Levels SL  -  CIF B99558611</div>
+        <div>© 2022 por Arcade Levels. Todos los derechos reservados</div>
+      </div>
     </footer>
   
     <script type="module" src="/main.js"></script>
     <script type="module" src="/imports.js"></script>
+    <script type="module" src="/contador.js"></script>
   </body>
 </html>
