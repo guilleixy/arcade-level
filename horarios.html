@@ -8,6 +8,8 @@
     <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
   </head>
   <body>
     <header class="flex align-center dark-blue-bg justify-center">
@@ -80,79 +82,89 @@
     </header>
   
     <main>
-
-      <div class="flex flex-wrap">
-        <div class="container-provisional-dim container-provisional animacion-div brdr-rd-small pointer">
-          <div class="celda1 col-1">
-            <img src="arcades_juegos/outrun_panel.webp" alt="">
-            <div class="sld-wrp hidden">
-              <div class="slider-for">
-                <div class="slide-container">
-                  <img class="slide-cointainer-img" src="arcades_juegos/outrun/1.webp" alt="">
-                </div>
-                <div class="slide-container">
-                  <img  class="slide-cointainer-img" src="arcades_juegos/outrun/2.webp" alt="">
-                </div>
-                <div class="slide-container">
-                  <img  class="slide-cointainer-img" src="arcades_juegos/outrun/3.webp" alt="">
-                </div>
-                <div class="slide-container">
-                  <img  class="slide-cointainer-img" src="arcades_juegos/outrun/4.webp" alt="">
-                </div>
-                <div class="slide-container">
-                  <img  class="slide-cointainer-img" src="arcades_juegos/outrun/5.webp" alt="">
-                </div>
-                <div class="slide-container">
-                  <img  class="slide-cointainer-img" src="arcades_juegos/outrun/6.webp" alt="">
-                </div>
-              </div>
-              <div class="slider-nav">
-                <img  class="slide-btn" src="arcades_juegos/outrun/1.webp" alt="">
-                <img  class="slide-btn" src="arcades_juegos/outrun/2.webp" alt="">
-                <img  class="slide-btn" src="arcades_juegos/outrun/3.webp" alt="">
-                <img  class="slide-btn" src="arcades_juegos/outrun/4.webp" alt="">
-                <img  class="slide-btn" src="arcades_juegos/outrun/5.webp" alt="">
-                <img  class="slide-btn" src="arcades_juegos/outrun/6.webp" alt="">
-              </div>
-            
-            </div>
+      <div class="flex flex-column align-center justify-center brdr-rd-small brdr-red-black carr-horarios-bg padding-horarios-hero mage-font text-center">
+        <div class="red-trans-bg relative">
+          <h4>Los ARCADES vuelven gracias a Arcade Levels</h4>
+          <h4>Ven a disfrutar del mejor salón de ARCADE</h4>
+          <div class="flex text-black">
+            <div class="brdr-rd-50 white-bg horarios-hero-circ flex align-center justify-center">Máquinas de los 80, 90 y 2000</div>
+            <div class="brdr-rd-50 white-bg horarios-hero-circ flex align-center justify-center">Juega sin límites y sin monedas</div>
+            <div class="brdr-rd-50 white-bg horarios-hero-circ flex align-center justify-center">Pago por entrada, modo freeplay</div>
+            <div class="brdr-rd-50 white-bg horarios-hero-circ flex align-center justify-center">Disfruta de más de 160 máquinas arcade</div>
           </div>
-          <div class="col-2">
-            <div class="hidden celda2">
-              <h2 class="boing-anim-perma">OutRun</h2>
-              <p>
-                Outrun es un juego de carreras creado en 1986 por Yu Suzuki y Sega-AM2.
-                La idea es recorrer cinco etapas antes de que se termine el tiempo, para 
-                conseguirlo nos pondríamos a los mandos de un Ferrari Testarossa descapotable rojo con una mujer rubia como acompañante.
-              </p>
-              <p>
-                Hay otros cinco tipos de coche que podremos encontrar en las carreteras de este juego.
-              </p>
-              <p>
-                Para llegar a la meta hay que recorrer cinco etapas, al final de cada etapa el camino se divide 
-                en dos y se puede elegir la siguiente etapa entre dos posibles, El lado izquierdo es mas facil y 
-                cada vez que la terminas, el tiempo de juego aumenta.
-              </p>
-              <p>
-                Cuando este tiempo llega a 0, la partida acaba y un mapa describiendo las etapas recorridas aparece. 
-                Si conseguimos finalizar la quinta etapa antes de que se acabe el tiempo, aparece un final, cada final 
-                es diferente en función de cuál sea la última etapa, ya que hay 5 etapas posibles.
-              </p>
-            </div>
-            <div class="hidden celda4">
-              <div>
-                <h4>Estado</h4>
-                <hr>
-                <div>EN FUNCIONAMIENTO</div>
-              </div>
-              <div>
-                <h4>Records</h4>
-                <hr>
-                <a class="pointer" href="#">ENLACE EN AURCADE</a>
-              </div>
-            </div>
+          <div>
+            <button class="prev-button"></button>
+            <button class="next-button"></button>
           </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <h3 class="sega-font red-text">HORARIOS</h3>
+        <p>Horario de apertura / Opening Hours</p>
+        <hr>
+        <div class="flex align-center justify-center">
+          <div>
+            <p>Sábado / Saturday</p>
+            <p>10:00-14:00</p>
+            <p>17:00-21:00</p>
+          </div>
+          <hr>
+          <div>
+            <p>Domingo/Sunday</p>
+            <p>10:00-14:00</p>
+            <p>17:00-21:00</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center relative">
+        <h3 class="sega-font red-text">LOCALIZACION</h3>
+        <div id="map"></div>
+        <div class="absolute brdr-red-black brdr-rd-small white-bg text-black mapa-over-pos pokemon-font">
+          <ul>
+            <li class="ls-none"><i class="fa-solid fa-car"></i><span> A 5 minutos de Zaragoza en coche</span></li>
+            <li class="ls-none"><i class="fa-solid fa-bus"></i><span> Existen varias paradas de autobus</span></li>
+            <li class="ls-none">
+              <i class="fa-solid fa-business-time"></i>
+              <a href="rutasbusesarcadelevels.pdf" download="rutasbusesarcadelevels.pdf"> Descargar horarios autobuses</a> <!--podria hacerse que se abra sin mas en la pagina-->
+            </li>
+            <li class="ls-none"><i class="fa-solid fa-bell-concierge"></i><span> Disponéis de hoteles cercanos</span></li>
+            <li class="ls-none"><i class="fa-solid fa-utensils"></i><span> En Cuarte existe gran variedad e bares y restaurantes</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center">
+        <h3 class="sega-font red-text">EVENTOS</h3>
+        <div class="flex flex-wrap mage-font">
+          <div class="prueba_fondo relative">
+            <h3>Cumpleaños</h3>
+            <img src="horarios/personajes/donkey.png" alt="donkey-kong" class="filter-black absolute" height="50px" draggable="false">
+            <p class="z-index-2 absolute">Celebra tu cumpleaños con nosotros, en un entorno amigable para tus amigos y familiares</p>
 
+          </div>
+        </div>
+      </div>
+      <div class="pacman-wrapper">
+        <h2 class="pacman-font text-center black-bg"> EL PACMAN DE ARCADE LEVELS</h2>
+        <p class="text-black">
+          <span>Score: </span> <span id="scoreEl">0</span>
+        </p>
+        <div class="flex flex-wrap text-black">
+          <dialog id="pacman-dialog" class="flex flex-column align-center justify-center">
+            <p>¡Introduce tu nombre para empezar a jugar!</p>
+            <form method="dialog">
+              <input type="text" placeholder="Invitado" value="Invitado" id="name-input">
+              <button id="start-button">Start</button>
+            </form>
+          </dialog>
+          <canvas></canvas>
+          <div>
+            <p>
+              <span id="player-name">¡Introduce tu nombre!</span>
+            </p>
+            <h4>High Scores:</h4>
+            <ol id="highscores-ol">
+            </ol>
+          </div>
         </div>
       </div>
 
@@ -161,7 +173,7 @@
     <footer class="dark-blue-bg flex flex-column align-center justify-center">
       <div class="flex">
         <a><i class="fa-solid fa-house"></i> Carretera Valencia KM 7.8 Nave 72A  -  50410  -  Cuarte de Huerva  -  Zaragoza</a>
-        <a><i class="fa-solid fa-phone"></i> +34  663 624 29</div>
+        <a><i class="fa-solid fa-phone"></i> +34  663 624 29</a>
         <a><i class="fa-solid fa-envelope"></i> contacto@arcadelevels.com</a>
       </div>
       <div class="flex">
@@ -172,6 +184,8 @@
   
 
     <script type="module" src="/imports.js"></script>
-    <script type="module" src="/arcadesinfo.js"></script>
+    <script type="module" src="/pacman.js"></script>
+    <script type="module" src="/map.js"></script>
+    <script type="module" src="/horarios.js"></script>
   </body>
 </html>

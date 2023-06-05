@@ -76,81 +76,114 @@
     </header>
   
     <main class="lr-no-padding">
-      <section class="car-bg flex align-center flex-column">
-        <h2 class="sega-font red-text">TARIFAS</h2>
-        <div class="flex">
-          <div class="flex flex-column light-blue-bg brdr-blue-lr arcade-dim">
-            <h3 class="text-center brdr-black-blue height-10">Entrada normal</h3>
-            <div class="height-40 overflow-hidden">
-              <img src="tarifas/marquesinas/pantalla2.png" alt="tarifas-adultos" class="bg-adultos max-width marquesina-screen">
+      <section class="flex align-center flex-column">
+        <h2 class="sega-font red-text white-bg brdr-red-black brdr-rd-small padding-2">TARIFAS</h2>
+        <div class="flex car-bg padding-1 width-100 align-center justify-center flex-wrap">
+          <div class="flex flex-column black-bg brdr-orange-lr arcade-dim arcade-margins">
+            <div class="brdr-black-tb height-15 flex align-center justify-center">
+              <img src="tarifas/marquesinas/spaceinvmarquee.jpg" alt="" class="max-width">
+              <h3 class="hidden">Entrada individual</h3>
+            </div>
+            <div class="height-30 overflow-hidden">
+              <img src="tarifas/marquesinas/marcospaceinv.png" alt="tarifas-adultos" class="bg-adultos max-all marquesina-screen">
             </div>
             <div class="relative height-25 flex justify-center brdr-black-blue">
-              <img class="max-height" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false">
+              <img class="max-height controls" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false" usemap="#controls-map">
               <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick" draggable="false" id="joystick">
+			        <map name="controls-map">
+                <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+              </map>
+              
             </div>
-            <div class="height-25 padding-1">
-              <div>
+            <div class="height-30 padding-1 cosmic-font text-kinda-normal text-center space-dark-blue-bg text-black">
+              <div class="brdr-rd-small brdr-black padding-2">
                 <p>Entrada general: 15€</p>
-                <h4>Condiciones:</h4>
-                <p>Entrada válida para mayores de 8 años</p>
-                <h4>Duración:</h4>
-                <p>4 Horas de juego en la sesión que se elija</p>
+                <h4 class="red-text">Condiciones:</h4>
+                <p>Entrada valida para mayores de 8 a<span class="mage-font">ñ</span>os</p>
+                <h4 class="red-text">Duración:</h4>
+                <p>4 Horas de juego en la sesion que se elija</p>
               </div>
             </div>
           </div>
-          <div class="flex flex-column light-blue-bg brdr-blue-lr arcade-dim">
-            <h3 class="text-center brdr-black-blue height-10">Entrada normal</h3>
-            <div class="height-40 overflow-hidden">
-              <img src="tarifas/marquesinas/pantalla2.png" alt="tarifas-adultos" class="bg-infantil max-width  marquesina-screen">
+          <div class="flex flex-column black-bg brdr-red-lr arcade-dim arcade-margins">
+            <div class="brdr-black-tb height-15 flex align-center justify-center">
+              <img src="tarifas/marquesinas/pacmanmarquee.jpg" alt="" class="max-width">
+              <h3 class="hidden">Entrada infantil</h3>
+            </div>
+            <div class="height-30 overflow-hidden">
+              <img src="tarifas/marquesinas/pacmanmarco.png" alt="tarifas-adultos" class="bg-infantil max-all  marquesina-screen">
             </div>
             <div class="relative height-25 flex justify-center brdr-black-blue">
-              <img class="max-height" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false">
+              <img class="max-height controls" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false" usemap="#controls-map2">
               <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick" draggable="false" id="joystick">
+              <map name="controls-map2">
+                <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+              </map>
             </div>
-            <div class="height-25 padding-1">
-              <div>
-                <p>Entrada general: 15€</p>
-                <h4>Condiciones:</h4>
-                <p>Entrada válida para mayores de 8 años</p>
-                <h4>Duración:</h4>
-                <p>4 Horas de juego en la sesión que se elija</p>
+            <div class="height-30 padding-1 pokemon-font nav-text-size text-center text-black yellow-bg">
+              <div class="brdr-rd-small brdr-black padding-2">
+                <p>ENTRADA GENERAL: 13€</p>
+                <h4 class="red-text">CONDICIONES:</h4>
+                <p>ENTRADA VÁLIDA PARA MENORES DE 8 AÑOS</p>
+                <h4 class="red-text">DURACIÓN:</h4>
+                <p>4 HORAS DE JUEGO EN LA SESIÓN QUE SE ELIJA</p>
               </div>
             </div>
           </div>
-          <div class="flex flex-column light-blue-bg brdr-blue-lr arcade-dim" id="adultos">
-            <h3 class="text-center brdr-black-blue height-10">Entrada normal</h3>
-            <div class="height-40 overflow-hidden">
-              <img src="tarifas/marquesinas/pantalla2.png" alt="tarifas-adultos" class="bg-adultos max-width  marquesina-screen">
+          <div class="flex flex-column black-bg brdr-white-lr arcade-dim arcade-margins" id="adultos">
+            <div class="brdr-black-tb height-15 flex align-center justify-center">
+              <img src="tarifas/marquesinas/dkmarquee.jpg" alt="" class="max-width">
+              <h3 class="hidden">Entrada combinada</h3>
+            </div>
+            <div class="height-30 overflow-hidden">
+              <img src="tarifas/marquesinas/dkmarco.png" alt="tarifas-adultos" class="bg-adultos max-all  marquesina-screen">
             </div>
             <div class="relative height-25 flex justify-center brdr-black-blue">
-              <img class="max-height" src="tarifas/marquesinas/adultos.svg" draggable="false">
+              <img class="max-height  controls" src="tarifas/marquesinas/adultos.svg" draggable="false"  usemap="#controls-map3">
               <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick" draggable="false" id="joystick">
+              <map name="controls-map3">
+                <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+              </map>
             </div>
-            <div class="height-25 padding-1">
-              <div>
-                <p>Entrada general: 15€</p>
-                <h4>Condiciones:</h4>
-                <p>Entrada válida para mayores de 8 años</p>
-                <h4>Duración:</h4>
-                <p>4 Horas de juego en la sesión que se elija</p>
+            <div class="height-30 padding-1 dk-font text-kinda-big text-center text-black light-blue-bg ">
+              <div class="brdr-rd-small brdr-black padding-2">
+                <p>ENTRADA GENERAL: 25€</p>
+                <h4 class="red-text">CONDICIONES:</h4>
+                <p>ENTRADA VÁLIDA PARA MAYORES DE 8 AÑOS</p>
+                <h4 class="red-text">DURACIÓN:</h4>
+                <p>8 HORAS DE JUEGO, SESIÓN DE MAÑANA Y TARDE</p>
               </div>
             </div>
           </div>
-          <div class="flex flex-column light-blue-bg brdr-blue-lr arcade-dim">
-            <h3 class="text-center brdr-black-blue height-10">Entrada normal</h3>
-            <div class="height-40 overflow-hidden">
-              <img src="tarifas/marquesinas/pantalla2.png" alt="tarifas-adultos" class="bg-adultos max-width  marquesina-screen">
+          <div class="flex flex-column black-bg brdr-yellow-lr arcade-dim mario-font arcade-margins">
+            <div class="brdr-black-tb height-15 flex align-center justify-center">
+              <img src="tarifas/marquesinas/mariomarquee.jpg" alt="" class="max-width">
+              <h3 class="hidden">Entradas grupos</h3>
             </div>
-            <div class="relative height-25 flex justify-center brdr-black-blue">
-              <img class="max-height" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false">
+            <div class="height-30 overflow-hidden">
+              <img src="tarifas/marquesinas/marcomario.png" alt="tarifas-adultos" class="bg-adultos max-width  marquesina-screen">
+            </div>
+            <div class="relative height-25 flex justify-center brdr-black-tb black-bg">
+              <img class="max-height  controls" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false" usemap="#controls-map4">
               <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick" draggable="false" id="joystick">
+              <map name="controls-map4">
+                <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+              </map>
             </div>
-            <div class="height-25 padding-1">
-              <div>
-                <p>Entrada general: 15€</p>
-                <h4>Condiciones:</h4>
-                <p>Entrada válida para mayores de 8 años</p>
-                <h4>Duración:</h4>
+            <div class="height-30 padding-1 nav-text-size text-center black-bg">
+              <div class="brdr-rd-small brdr-red-black padding-2">
+                <p>Pack 10 entradas</p>
+                <h4 class="red-text">Condiciones:</h4>
+                <p>Se pagan 9 entradas y 1 es gratuita, la de menor valor</p>
+                <h4 class="red-text">Duración:</h4>
                 <p>4 Horas de juego en la sesión que se elija</p>
               </div>
             </div>

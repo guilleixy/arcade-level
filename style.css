@@ -28,6 +28,48 @@
   src: local('super-mario-bros-nes'), url('fonts/super-mario-bros-nes.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Pokemon GB';
+  font-style: normal;
+  font-weight: normal;
+  src: local('PokemonGb-RAeo'), url('fonts/PokemonGb-RAeo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Zelda Ganon';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ReturnOfGanonRegular-3ReM'), url('fonts/ReturnOfGanonRegular-3ReM.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cosmic Alien';
+  font-style: normal;
+  font-weight: normal;
+  src: local('CosmicAlien-V4Ax'), url('fonts/CosmicAlien-V4Ax.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Space Invaders';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Invaders-6RY1'), url('fonts/Invaders-6RY1.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Jumpman';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Jumpman'), url('fonts/Jumpman.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pacman';
+  font-style: normal;
+  font-weight: normal;
+  src: local('PacfontGood-yYye'), url('fonts/PacfontGood-yYye.ttf') format('truetype');
+}
+
 :root {
   font-family: 'Press Start', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -50,12 +92,17 @@
 
   --header-height: 100px;
   --footer-height: 100px;
+  --main-padding: 5vw;
 }
 
 /* estilos para etiquetas en general */
 
+i{
+  max-height: 100%;
+}
+
 main{
-  padding: 5vw;
+  padding: var(--main-padding);
 }
 
 header{
@@ -147,6 +194,10 @@ footer{
   height: 25%;
 }
 
+.height-15{
+  height: 15%;
+}
+
 .max-height{
   max-height: 100%;
   width: auto;
@@ -157,8 +208,17 @@ footer{
   height: auto;
 }
 
+.max-all{ /* ¿?  */
+  width: 100%;
+  max-height: 100%;
+}
+
 .flex-wrap{
   flex-wrap: wrap;
+}
+
+.width-100{
+  width: 100%;
 }
 /* paddings y margins */
 
@@ -182,6 +242,10 @@ footer{
 .lr-no-padding{
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+.padding-horarios-hero{
+  padding:80px;
 }
 
 /* estilos relacionados con las listas y los nav */
@@ -212,6 +276,10 @@ footer{
   box-shadow: 0 0 0 2.5px var(--clr-txt-red);
 }
 
+.brdr-black{
+  border: 3px solid black;
+}
+
 .overflow-hidden{
   overflow: hidden;
 }
@@ -221,14 +289,43 @@ footer{
   border-bottom: 20px solid #001317;
 }
 
+.brdr-black-tb{
+  border-top: 20px solid black;
+  border-bottom: 20px solid black;
+}
+
+.brdr-yellow-lr{
+  border-left: 15px solid #faa917;
+  border-right: 15px solid #faa917;
+}
+
 .brdr-blue-lr{
   border-left: 15px solid #005464;
   border-right: 15px solid #005464;
 }
 
+.brdr-red-lr{
+  border-left: 15px solid #fa5354;
+  border-right: 15px solid #fa5354;
+}
+
 .brder-lr-grey{
   border-left: 3px solid grey;
   border-right: 3px solid grey;
+}
+
+.brdr-white-lr{
+  border-left: 15px solid #fbeed8;
+  border-right: 15px solid #fbeed8;
+}
+
+.brdr-orange-lr{
+  border-left: 15px solid #d0662e;
+  border-right: 15px solid #d0662e;
+}
+
+.brdr-rd-50{
+  border-radius: 50%;
 }
 
 /* estilos que se añaden con javascript */
@@ -272,6 +369,34 @@ footer{
   font-family: 'SEGA', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+.pokemon-font{
+  font-family: 'Pokemon GB', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.mario-font{
+  font-family: 'Mario Bros NES', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.zelda-font{
+  font-family: 'Zelda Ganon', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.cosmic-font{
+  font-family: 'Cosmic Alien', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.invaders-font{
+  font-family: 'Space Invaders', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.dk-font{
+  font-family: 'Jumpman', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.pacman-font{
+  font-family: 'Pacman', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 .text-center{
   text-align: center;
 }
@@ -288,12 +413,24 @@ footer{
   font-size: 1.2em;
 }
 
+.text-kinda-big{
+  font-size: 1em;
+}
+
 .nav-text-size{
   font-size: 0.75em;
 }
 
+.text-kinda-normal{
+  font-size: 0.88em;
+}
+
 .mage-font{
   font-family: '8bit Mage', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.text-black{
+  color: black;
 }
 
 /* colores de fondo */
@@ -307,10 +444,36 @@ footer{
 }
 
 .light-blue-bg{
-  background-color: #0095b1;
+  background-color: #56b0c8;
+}
+
+.black-bg{
+  background-color: black;
+}
+
+.space-dark-blue-bg{
+  background-color: #2a44b8;
+}
+
+.yellow-bg{
+  background-color: #feff01;
+}
+
+.carr-horarios-bg{
+  background-image: url(horarios/1.jpg);
+  background-size: cover;
+}
+
+.red-trans-bg{
+  background-color: #d80d0d86;
 }
 
 /* estilos específicos */
+
+.horarios-hero-circ{
+  height: 170px;
+  width: 170px;
+}
 
 .pointer:hover{
   cursor: pointer;
@@ -548,6 +711,11 @@ footer{
   width: 314px;
 }
 
+.arcade-margins{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 .container-provisional{
   background-color: #615d5d;
   display: flex;
@@ -560,8 +728,10 @@ footer{
 }
 
 .container-provisional-dim-2{
-  width: 90%;
-  height: 60vh;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 60%;
 }
 
 .size-provisional{
@@ -598,6 +768,103 @@ footer{
 
 .slide-btn:hover {
   background-color: rgb(255, 179, 0);
+}
+
+/* estilos de los paneles de juegos */
+
+.col-1{
+
+}
+
+.col-2{
+  width: 650px;
+}
+
+.underline-grow::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -3px;
+  left: -1px;
+  background-color: blue;
+  transition: width 0.2s ease-in-out;
+}
+
+.underline-grow:hover::before {
+  width: 100%;
+  animation: gradient-animation 6s infinite 0.3s;
+}
+
+#map { 
+  height: 600px; 
+}
+
+.z-index-9{
+  z-index: 9;
+}
+
+.mapa-over-pos{
+  bottom: 0;
+  z-index: 999;
+}
+
+.z-index-2{
+  z-index: 3;
+}
+
+.filter-black{
+  filter: brightness(0);
+  z-index: 0;
+  bottom: 0;
+}
+
+.prueba_fondo{
+  background-color: red;
+  height: 200px;
+  width: 200px;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-color: blue;
+  }
+  20% {
+    background-color: green;
+  }
+  40% {
+    background-color: yellow;
+  }
+  60% {
+    background-color: orange;
+  }
+  80% {
+    background-color: red;
+  }
+  100% {
+    background-color: blue;
+  }
+}
+
+.shiny-hover:hover{
+  background-image: url(arcades_juegos/shiny.gif);
+  background-repeat: repeat-x;
+  background-size: 25%;
+}
+
+.cursor-default:hover{
+  cursor: default;
+}
+
+.red-filter {
+  filter:  hue-rotate(245deg) saturate(260%);
+}
+
+
+/* estilos de transiciones */
+
+.transitions-all-ease-0-3s{
+  transition: 0.3s all ease-in-out;
 }
 
 /* estilos de las arcades de tarifas */

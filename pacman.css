@@ -1,0 +1,19 @@
+.marg-top-provisional{
+    margin-top: 75px;
+}
+
+canvas{
+    background-color: black;
+}
+
+.pacman-wrapper{
+    background-color: #ffd000;
+}
+
+#pacman-dialog {
+    background-image: url(horarios/trampita.png);
+    background-size: cover;
+    margin-left: var(--main-padding);
+    width: 760px;
+    height: 920px;
+  }

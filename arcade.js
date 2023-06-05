@@ -4,7 +4,7 @@ const imagenes_adultos = [
   '/tarifas/adultos/3.webp',
 ];
 
-
+/* 
 let prueba = document.getElementById("adultos");
 
 
@@ -17,7 +17,7 @@ prueba.addEventListener("mousedown", function() {
 prueba.addEventListener("mouseup", function() {
     prueba.src = srcOriginal;
 });
-/* esto hace que el usuario pueda mover a donde quiera de la pantalla lo que ha clickeado
+esto hace que el usuario pueda mover a donde quiera de la pantalla lo que ha clickeado
 const joystick = document.getElementById("joystick");
 let isClicked = false;
 let initialMouseOffsetX;
@@ -55,6 +55,64 @@ arcades.forEach((arcade) => {
   let initialAngle = 0;
   let currentAngle = 0;
   let lastAngle = 0;
+
+  let original = arcade.querySelector('.controls');
+  let srcOriginal = original.src;
+  let boton_rojo = arcade.querySelector('.boton-rojo');
+  
+  boton_rojo.addEventListener("mousedown", function() {
+    original.src = "tarifas/marquesinas/adultos_red.svg";
+    const estilo = getComputedStyle(pantalla);
+    const filtroActual = estilo.getPropertyValue("filter");
+    
+    if (filtroActual.includes("sepia")) {
+      // Si el filtro "sepia" está presente, lo quitamos
+      pantalla.style.filter = "";
+    } else {
+      // Si el filtro "sepia" no está presente, lo agregamos
+      pantalla.style.filter = "sepia(100%)";
+    }
+  });
+  
+  boton_rojo.addEventListener("mouseup", function() {
+    original.src = srcOriginal;
+  });
+
+  let boton_verde = arcade.querySelector('.boton-verde');
+  
+  boton_verde.addEventListener("mousedown", function() {
+    original.src = "tarifas/marquesinas/adultos_green.svg";
+    const estilo = getComputedStyle(pantalla);
+    const filtroActual = estilo.getPropertyValue("filter");
+    
+    if (filtroActual.includes("grayscale")) {
+      pantalla.style.filter = "";
+    } else {
+      pantalla.style.filter = "grayscale(100%)";
+    }
+  });
+  
+  boton_verde.addEventListener("mouseup", function() {
+    original.src = srcOriginal;
+  });
+
+  let boton_amarillo = arcade.querySelector('.boton-amarillo');
+  
+  boton_amarillo.addEventListener("mousedown", function() {
+    original.src = "tarifas/marquesinas/adultos_yellow.svg";
+    const estilo = getComputedStyle(pantalla);
+    const filtroActual = estilo.getPropertyValue("filter");
+    
+    if (filtroActual.includes("contrast")) {
+      pantalla.style.filter = "";
+    } else {
+      pantalla.style.filter = "contrast(200%)";
+    }
+  });
+  
+  boton_amarillo.addEventListener("mouseup", function() {
+    original.src = srcOriginal;
+  });
 
   joystick.addEventListener("mousedown", function(e) {
     const joystickRect = joystick.getBoundingClientRect();

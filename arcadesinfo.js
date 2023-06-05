@@ -9,7 +9,9 @@ const provisional = document.querySelector('.container-provisional');
 
 provisional.addEventListener('click', (event) => {
     provisional.classList.remove('container-provisional-dim');
+    provisional.classList.remove('pointer');
     provisional.classList.add('container-provisional-dim-2');
+    provisional.classList.add('padding-1');
     const hiddenElements = provisional.querySelectorAll('.hidden');
     hiddenElements.forEach((element) => {
       element.classList.remove('hidden');
