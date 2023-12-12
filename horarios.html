@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/icon.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCADE LEVELS</title>
+    <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+    <script src="leaflet/leaflet.js"></script>
+  </head>
+  <body>
+    <div class="computer-hidden nav-bg-mobile absolute scrollbar-gutter pixel-art"></div>
+    <header class="flex align-center dark-blue-bg justify-center relative">
+      <div class="absolute header-effect">
+        <img src="sonic-running.gif" alt="" height="100%" style="margin-left: 150px;">
+      </div>
+      <script>
+
+        const corredores = [
+          'sonic-running.gif',
+          'knuckles-running.webp',
+          'tails-running.gif',
+          'kirby-running.gif'
+        ]
+
+        const fondos = [
+          'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,0,0,1) 35%, rgba(244,20,20,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(178,107,19,1) 35%, rgba(219,130,12,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,4,56,1) 35%, rgba(219,12,189,1) 100%)'
+        ]
+
+        const headerEffect = document.querySelector('.header-effect');
+        const sonic = headerEffect.querySelector('img');
+        function startAnimation() {
+
+          let indiceAleatorio = Math.floor(Math.random() * corredores.length)
+
+          headerEffect.style.background = fondos[indiceAleatorio];
+          sonic.src = corredores[indiceAleatorio];
+
+          headerEffect.classList.add('header-effect-anim');
+          const randomOpacity = Math.random();
+
+          // Establecer la opacidad en base al número aleatorio
+          if (randomOpacity < 0.5) {
+            sonic.style.opacity = '0';
+          } else {
+            sonic.style.opacity = '1';
+            headerEffect.style.background = "none";
+          }
+        }
+
+        function restartAnimation() {
+          // headerEffect.classList.remove('header-effect-anim-reverse');
+          headerEffect.classList.remove('header-effect-anim');
+          // Generar un número aleatorio entre 1000 y 20000
+          let tiempoAleatorio = Math.floor(Math.random() * (20000 - 1000 + 1)) + 1000;
+
+          // Esperar el tiempo aleatorio y luego llamar a la función startAnimation
+          setTimeout(startAnimation, tiempoAleatorio);
+          //20000
+        }
+        //deberia ejecutarse por primera vez un poco despues, idealmente despues de que se cargue (creo)
+        setTimeout(()=>{
+          startAnimation();
+        },1000)
+        setInterval(restartAnimation, 5000); 
+      </script>
+      <div class=" white-bg brdr-red-black brdr-rd-small pointer flex align-center justify-center nav-logo-wrapper">
+        <div>
+          <h1 class="sega-font text-center red-text logo-1">ARCADE LEVELS</h1>
+          <div class="flex header-pacman-wrapper">
+            <img class="pacman-gif" src="pacman.gif" alt="pacman">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+          </div>
+        </div>
+        <img class="header-img" src="logo-arcade.png" alt="logo-arcade">
+      </div>
+      <nav class="flex">
+          <ul class="ls-none flex align-center justify-center nav-text-size text-center mage-font nav-list mobile-hidden">
+              <button class="padding-login-nav flex align-center justify-center"><i class="fa-solid fa-circle-user"></i> Iniciar Sesión</button>
+              <li class="padding-li-nav"><a class="dk-underline-perm" href="horarios.html">Horarios</a></li>
+              <li  class="padding-li-nav"><a class="dk-underline" href="tarifas.html">Tarifas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="galeria.html">Galería imágenes</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="index.html">Nuestros juegos</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="reservas.html">Reservas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="compraventa.html">CompraVenta y Reparaciones</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="flex align-center justify-center overflow-hidden">
+            <button class="relative nav-burger-button pointer flex align-center justify-center computer-hidden" onclick="toggleNavMenu()">
+              <img src="burger2.gif" alt="burger-menu" id="burger-nav" height="25">
+            </button>
+            <script>
+              const burgerButton = document.getElementById("burger-nav");
+              
+              const bg = document.querySelector('.nav-bg-mobile');
+
+              const nav = document.querySelector('.nav-list');
+
+              let menuToggled = false;
+  
+              function toggleNavMenu (){
+                  if(menuToggled){
+                      bg.style.backgroundImage = 'url(mobile-bg-1.gif)'
+                      burgerButton.src = "burger2.gif";
+                      menuToggled = false;
+                      document.body.style.overflow = "visible";
+                      setTimeout(()=>{
+                        bg.style.display = "none";
+                      },1000)
+                      nav.style.top = "-100%";
+                      nav.style.fontSize = "0.75em";
+                      setTimeout(()=>{
+                        nav.classList.add('mobile-hidden');
+                      },300)
+                  }
+                  else{
+                      bg.style.display = "flex";
+                      bg.style.backgroundImage = 'url(mobile-bg-2.gif)'
+                      burgerButton.src = "burger1.gif";
+                      menuToggled = true;
+                      document.body.style.overflow = "hidden";
+                      nav.classList.remove('mobile-hidden');
+                      setTimeout(()=>{
+                        nav.style.top = "130%";
+                        nav.style.fontSize = "1.3em";
+                      },1)
+
+                  }
+              }
+            </script>
+            <a href="https://www.youtube.com/c/ArcadeLevels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-youtube brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.instagram.com/arcade_levels/" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-instagram brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.tiktok.com/@arcade_levels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-tiktok brick-bounce" id="coin-add"></i>
+              <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+          </div>
+      </nav>
+      <img src="mario-peeking.png" height="55px" class="absolute yoshi-peeking pointer peeking" alt="" draggable="false">
+      <img height="20px" width="auto" class="absolute coin-peeking" src="Coin.gif" alt="coin">
+      <div class="absolute flex align-center padding-2 relative brdr-rd-bottom-2" id="coin-counter-wrapper">
+        <img class="counter-coin" height="20px" src="coin.png" alt="coin" draggable="false">
+        <div>x</div><div id="coin-counter"></div>
+        <div class="relative">
+          <img src="marioblock.png" alt="mario block" height="18px" class="cursor-interr question-img-coins" >     
+          <div class="absolute grey-bg-semitrans text-small-1 question-coin-hover">
+            <p>Hemos escondido monedas por toda la página.</p>
+            <p>Cada vez que consigas una moneda, <br> se sumará al contador global.</p>
+            <p>¡Encuentralas todas y <br>ayúdanos a conseguir 1 Millón de Monedas!</p>
+            <!--poner una imagen?-->
+          </div>
+        </div>
+
+      </div>
+    </header>
+  
+    <main>
+      <div class="zelda-font flex align-center justify-center text-big-2 margin-bottom-1">
+          <div class="text-center mage-font">
+            <h4>Los ARCADES vuelven gracias a <span class="sega-font red-text">Arcade Levels</span></h4>
+            <h4>¡Ven a disfrutar del mejor salon de ARCADE!</h4>
+          </div>
+      </div>
+      <section id="destroyer-wrapper" class="relative overflow-hidden space-bg hide-cursor brdr-rd-small small-shadow">
+        <div class="nave-bg inline-block absolute no-select" id="destroyer-nave">
+          <img src="horarios/nave3Bg.png" height="80px" alt="Nave" class="" draggable="false" id="nave-img">
+        </div>
+        <img src="horarios/bala.png" alt="Bala Pequeña" id="bala-espacio" class="absolute" draggable="false">
+        <img src="horarios/bala2.png" alt="Bala" id="bala-small" class="absolute" draggable="false">
+        <div class="absolute" id="crosshair"></div>
+        <div class="asteroid-bg absolute flex align-center justify-center no-select asteroide">
+          <div class="asteroide-blur asteroide-blur-asteroide rotate-anim"></div>
+          <h4 class="mage-font text-center">
+            <div>
+              <span class="key">M</span>
+              <span class="key">á</span>
+              <span class="key">q</span>
+              <span class="key">u</span>
+              <span class="key">i</span>
+              <span class="key">n</span>
+              <span class="key">a</span>
+              <span class="key">s </span>
+              <span class="key">d</span>
+              <span class="key">e </span>
+            </div>
+            <div>
+              <span class="key">l</span>
+              <span class="key">o</span>
+              <span class="key">s</span>
+              <span class="key">8</span>
+              <span class="key">0</span>
+              <span class="key">, </span>
+              <span class="key">9</span>
+              <span class="key">0</span>
+            </div>
+            <div>
+              <span class="key">y </span>
+              <span class="key">2</span>
+              <span class="key">0</span>
+              <span class="key">0</span>
+              <span class="key">0</span>
+            </div>
+          </h4>
+        </div>
+        <div class="tierra-bg absolute flex align-center justify-center no-select asteroide">
+          <div class="asteroide-blur asteroide-blur-tierra rotate-anim"></div>
+          <h4 class="mage-font text-center">
+            <div>
+              <span class="key">S</span>
+              <span class="key">i</span>
+              <span class="key">n</span>
+              <span class="key"> </span>
+              <span class="key">l</span>
+              <span class="key">í</span>
+              <span class="key">m</span>
+              <span class="key">i</span>
+              <span class="key">t</span>
+              <span class="key">e</span>
+              <span class="key">s</span>
+            </div>
+            <div>
+              <span class="key"> </span>
+              <span class="key">y</span>
+              <span class="key"> </span>
+              <span class="key">s</span>
+              <span class="key">i</span>
+              <span class="key">n</span>
+              <span class="key"> </span>
+            </div>
+            <div>
+              <span class="key">m</span>
+              <span class="key">o</span>
+              <span class="key">n</span>
+              <span class="key">e</span>
+              <span class="key">d</span>
+              <span class="key">a</span>
+              <span class="key">s</span>
+            </div>
+          </h4>
+        </div>
+        <div class="mercurio-bg absolute flex align-center justify-center no-select asteroide">
+          <div class="asteroide-blur asteroide-blur-mercurio rotate-anim"></div>
+          <h4 class="mage-font text-center">
+            <div>
+              <span class="key">P</span>
+              <span class="key">a</span>
+              <span class="key">g</span>
+              <span class="key">o</span>
+              <span class="key"> </span>
+              <span class="key">p</span>
+              <span class="key">o</span>
+              <span class="key">r</span>
+            </div>
+            <div>
+              <span class="key">e</span>
+              <span class="key">n</span>
+              <span class="key">t</span>
+              <span class="key">r</span>
+              <span class="key">a</span>
+              <span class="key">d</span>
+              <span class="key">a</span>
+              <span class="key">,</span>
+            </div>
+            <div>
+              <span class="key"> </span>
+              <span class="key">m</span>
+              <span class="key">o</span>
+              <span class="key">d</span>
+              <span class="key">o</span>
+              <span class="key"> </span>
+              <span class="key">f</span>
+              <span class="key">r</span>
+              <span class="key">e</span>
+              <span class="key">e</span>
+              <span class="key">p</span>
+              <span class="key">l</span>
+              <span class="key">a</span>
+              <span class="key">y</span>
+            </div>
+          </h4>
+        </div>
+        <div class="pluton-bg absolute flex align-center justify-center no-select asteroide">
+          <div class="asteroide-blur asteroide-blur-tierra rotate-anim"></div>
+          <h4 class="mage-font text-center">
+            <div>
+              <span class="key">M</span>
+              <span class="key">á</span>
+              <span class="key">s</span>
+              <span class="key"> </span>
+              <span class="key">d</span>
+              <span class="key">e</span>
+              <span class="key"> </span>
+              <span class="key">1</span>
+              <span class="key">6</span>
+              <span class="key">0</span>
+            </div>
+            <div>
+              <span class="key">m</span>
+              <span class="key">á</span>
+              <span class="key">q</span>
+              <span class="key">u</span>
+              <span class="key">i</span>
+              <span class="key">n</span>
+              <span class="key">a</span>
+              <span class="key">s</span>
+            </div>
+            <div>
+              <span class="key">a</span>
+              <span class="key">r</span>
+              <span class="key">c</span>
+              <span class="key">a</span>
+              <span class="key">d</span>
+              <span class="key">e</span>
+            </div>
+          </h4>
+        </div>
+        
+      </section>
+      <section class="text-center relative padding-extra-top" id="horarios">
+        <div id="mario-scanner-wrapper" class="absolute marios-wrapper pointer">
+          <div class="relative marios-wrapper">
+            <img id="MarioV8Bit" src="horarios/wat.png" alt="mario victory pose" class="absolute mario-victory pixel-art" height="350px">
+            <img id="MarioVHD" src="horarios/wat3.png" alt="mario victory pose" class="absolute mario-victory" height="350px">
+          </div>
+          <div id="scanner" class="absolute scanner-animation">
+            <div class="relative">
+              <div class="absolute prueba-cent" id="flare">
+                <div class="relative">
+                  <div class="absolute hws"><img src="horarios/sparks.gif" alt="sparks" class="scanner-sparks" height="50px"></div>
+                  <div class="scanner-light-blur absolute"></div>
+                  <div class="scanner-light absolute"></div>
+                </div>
+              </div>
+              <div class="scanner-line absolute"></div>
+              <div class="scanner-line scanner-blur absolute"></div>
+              <div class="scanner-line scanner-blur-2 absolute"></div>
+            </div>
+          </div>
+        </div>
+        <script>
+          const bit = document.getElementById('MarioV8Bit');
+          const hd = document.getElementById('MarioVHD');
+          const scanner = document.getElementById('scanner');
+          const wrapper = document.getElementById('mario-scanner-wrapper');
+
+          const flare = document.getElementById('flare');
+
+          const img_height = hd.clientHeight;
+          const img_width = hd.clientWidth;
+
+          hd.style.clip = `rect(${img_height}px, auto, ${img_height}px, 0)`;
+
+          let rectTop = 0; // Valor inicial del recorte superior
+          let animationDuration = 4; // Duración de la animación en segundos
+          let animationInterval = 16; // Intervalo en milisegundos (aproximadamente 60 cuadros por segundo)
+
+          let direction = false;
+          let animStarted = false;
+
+          function randomizeFlarePosition() {
+
+          const minLeft = 5; // Valor mínimo para la propiedad left
+          const maxLeft = img_width; // Valor máximo para la propiedad left
+
+          // Generar un valor aleatorio dentro del rango establecido
+          const randomLeft = Math.floor(Math.random() * (maxLeft - minLeft + 1)) + minLeft;
+            
+          // Aplicar el valor aleatorio a la propiedad left del elemento flare
+          flare.style.left = `${randomLeft}px`;
+          }
+
+          function animateClip() {
+            let pixelsPerSecond = bit.clientHeight / animationDuration; // Cálculo de píxeles por segundo
+            if(!direction){
+              rectTop += pixelsPerSecond * (animationInterval / 1000); // Ajuste de recorte por intervalo de tiempo
+            }
+            else if(direction){
+              rectTop -= pixelsPerSecond * (animationInterval / 1000); // Ajuste de recorte por intervalo de tiempo
+            }
+
+            bit.style.clip = `rect(${rectTop}px, auto, auto, 0)`;
+            hd.style.clip = `rect(auto, auto, ${rectTop}px, 0)`;
+            scanner.style.top = `${rectTop}px`;
+
+
+            if (rectTop < bit.clientHeight && rectTop > 0) {
+              setTimeout(animateClip, animationInterval);
+            }
+            else{
+              scanner.style.opacity = '0';
+              animStarted = false;
+              clearInterval(intervalId);
+              if(direction){
+                direction = false;
+              }
+              else{
+                direction = true;
+              }
+            }
+          }
+          wrapper.addEventListener('click', ()=>{
+            if(!animStarted){
+              intervalId = setInterval(() => {
+                randomizeFlarePosition();
+              }, 800);
+              scanner.style.opacity = '1'; 
+              setTimeout(()=>{
+                animateClip();
+              },300)
+              animStarted = true;
+            }
+            else{
+              if(direction){
+                direction = false;
+              }
+              else{
+                direction = true;
+              }
+            }
+          })
+
+        // Ejecutar randomizeFlarePosition inicialmente
+        randomizeFlarePosition();
+
+        // setInterval(() => {
+        //   randomizeFlarePosition();
+        // }, 500);
+        </script>
+        <!-- <div class="">
+          <div class="relative">
+            <img src="horarios/marioV.png" alt="mario victory pose" class="pixel-art absolute mario-victory" height="350px">
+            <img src="horarios/marioVHD.png" alt="mario victory pose" class="absolute mario-victory" height="380px">
+          </div>
+        </div> -->
+        <h3 class="sega-font red-text text-big-4">HORARIOS</h3>
+        <p class="padding-1">Horario de apertura / Opening Hours</p>
+        <hr>
+        <div class="flex align-center justify-center padding-1">
+          <div class="dotted-border-left text-center padding-1">
+            <p>Sábado / Saturday</p>
+            <p>10:00-14:00</p>
+            <p>17:00-21:00</p>
+          </div>
+
+          <div class="text-center padding-1">
+            <p>Domingo / Sunday</p>
+            <p>10:00-14:00</p>
+            <p>17:00-21:00</p>
+          </div>
+        </div>
+      </section>
+      <section class="text-center relative">
+        <h3 class="sega-font red-text text-big-4">LOCALIZACION</h3>
+          <iframe class="small-shadow brdr-rd-small" style="margin-top: 15px;" id="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11935.307187889324!2d-0.9405087!3d41.5946296!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd5941f3650df0dd%3A0x9e0ffb2b9aec08d0!2sArcade%20Levels!5e0!3m2!1ses!2ses!4v1687367166308!5m2!1ses!2ses" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="absolute brdr-red-black brdr-rd-small white-bg text-black mapa-over-pos pokemon-font text-kinda-normal padding-2"> <!--small-shadow aqui queda bien-->
+          <ul class="flex flex-column flex-start justify-center height-100 width-100 padidng-margin-0">
+            <li class="ls-none padding-2"><i class="fa-solid fa-car"></i><span> A 5 minutos de Zaragoza en coche</span></li>
+            <li class="ls-none padding-2"><i class="fa-solid fa-bus"></i><span> Existen varias paradas de autobus</span></li>
+            <li class="ls-none padding-2 white-text brd black-bg brdr-rd buses-download pointer" onclick="descargarArchivo()">
+              <i class="fa-solid fa-business-time"></i>
+              <a href="rutasbusesarcadelevels.pdf" download="rutasbusesarcadelevels.pdf"> Descargar horarios autobuses</a>
+            </li>
+            <li class="ls-none padding-2"><i class="fa-solid fa-bell-concierge"></i><span> Disponéis de hoteles cercanos</span></li>
+            <li class="ls-none padding-2"><i class="fa-solid fa-utensils"></i><span> En Cuarte existe gran variedad e bares y restaurantes</span></li>
+          </ul>
+        </div>
+      </section>
+      <script>
+        function descargarArchivo() {
+          var link = document.createElement('a');
+          link.href = 'rutasbusesarcadelevels.pdf';
+          link.download = 'rutasbusesarcadelevels.pdf';
+          link.click();
+        }
+      </script>
+      <section class="text-center mobile-hidden">
+        <h3 class="sega-font red-text text-big-4">EVENTOS</h3>
+        <div class="flex flex-column mage-font align-center justify-center" style="margin-top: 10px;">
+          <div class="flex">
+            <article class="eventos-bg relative margin-3 red-bg small-shadow brdr-rd-small-2">
+              <h3>Cumpleaños</h3>
+              <img src="horarios/personajes/dkstatic.gif" alt="donkey-kong" class="filter-black absolute static_gif" height="140px" draggable="false">
+              <img src="horarios/personajes/dk.gif" alt="donkey-kong" class="filter-black absolute animated_gif" height="140px" draggable="false">
+              <p class="z-index-2 absolute">Celebra tu cumpleaños con nosotros, en un entorno amigable para tus amigos y familiares</p>
+            </article>
+            <article class="eventos-bg relative margin-3 light-blue-bg small-shadow-2 brdr-rd-small-2">
+              <h3>Despedidas</h3>
+              <img src="horarios/personajes/link.png" alt="link" class="filter-black absolute static_gif" height="200px" draggable="false">
+              <img src="horarios/personajes/link.gif" alt="link" class="filter-black absolute animated_gif" height="200px" draggable="false">
+              <p class="z-index-2 absolute">Pasa un buen rato con tus colegas, disfruta de las mejores máquinas ARCADE y echaros unas partidas</p>
+            </article>
+            <article class="eventos-bg relative margin-3 dark-blue-bg small-shadow-3 brdr-rd-small-2">
+              <h3>Empresas</h3>
+              <img src="horarios/personajes/mario.png" alt="mario" class="filter-black absolute static_gif" height="200px" draggable="false">
+              <img src="horarios/personajes/mario.gif" alt="mario" class="filter-black absolute animated_gif" height="200px" draggable="false">
+              <p class="z-index-2 absolute">Presentaciones, reuniones o simplemente disfrutar un rato con los compañeros de trabajo o clientes </p>
+            </article>
+            <article class="eventos-bg relative margin-3 green-bg small-shadow-4 brdr-rd-small-2">
+              <h3>A tu medida</h3>
+              <img src="horarios/personajes/sonic.png" alt="sonic" class="filter-black absolute static_gif" height="160px" draggable="false">
+              <img src="horarios/personajes/sonic.gif" alt="sonic" class="filter-black absolute animated_gif" height="160px" draggable="false">
+              <p class="z-index-2 absolute">Tienes un evento que deseas realizar a puerta cerrada, consúltanos sin compromiso </p>
+            </article>
+          </div>
+          <div class="flex">
+            <article class="eventos-bg relative margin-3 red-bg small-shadow brdr-rd-small-2">
+              <h3>Torneos</h3>
+              <img src="horarios/personajes/megaman.png" alt="megaman" class="filter-black absolute static_gif" height="160px" draggable="false">
+              <img src="horarios/personajes/megaman.gif" alt="megaman" class="filter-black absolute animated_gif" height="160px" draggable="false">
+              <p class="z-index-2 absolute">¿Quieres hacer amigos, conocer gente nueva y divertirte? Apúntate a nuestros torneos</p>
+            </article>
+            <article class="eventos-bg relative margin-3 light-blue-bg small-shadow-2 brdr-rd-small-2">
+              <h3>Talleres</h3>
+              <img src="horarios/personajes/pikachu.png" alt="pikachu" class="filter-black absolute static_gif" height="160px" draggable="false">
+              <img src="horarios/personajes/pikachu.gif" alt="pikachu" class="filter-black absolute animated_gif" height="160px" draggable="false">
+              <p class="z-index-2 absolute">Realizamos talleres y eventos para colegios, para que los peques conozcan el mundo ARCADE</p>
+            </article>
+            <article class="eventos-bg relative margin-3 dark-blue-bg small-shadow-3 brdr-rd-small-2">
+              <h3>Records</h3>
+              <img src="horarios/personajes/kirby.png" alt="kirby" class="filter-black absolute static_gif" height="160px" draggable="false">
+              <img src="horarios/personajes/kirby.gif" alt="kirby" class="filter-black absolute animated_gif" height="160px" draggable="false">
+              <p class="z-index-2 absolute">Consigue un récord mundial. Elige el juego, te lo auditamos y subimos a la web oficial</p>
+            </article>
+            <article class="eventos-bg relative margin-3 green-bg small-shadow-4 brdr-rd-small-2">
+              <h3>Jornadas Ocio</h3>
+              <img src="horarios/personajes/tetris.png" alt="tetris" class="filter-black absolute static_gif" width="250px" draggable="false">
+              <img src="horarios/personajes/tetris.gif" alt="tetris" class="filter-black absolute animated_gif" width="250px" draggable="false">
+              <p class="z-index-2 absolute">¿Tienes una empresa? Celebra tus eventos privados o de ocio, disfruta de una experiencia única</p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!--<section class="pacman-wrapper small-shadow">
+        <div class="relative flex justify-center">
+          <marquee class="absolute z-index-3"  direction="right" ><img src="pacman.gif" height="50px"></marquee>
+          <h2 class="pacman-font text-center text-big-3 black-bg width-30 padding-1 brdr-rd-bottom"> EL PACMAN <br>DE <br>ARCADE LEVELS</h2>
+        </div>
+        <div class="flex justify-between text-black mobile-hidden width-50">
+          <p>
+            <span>Score: </span> <span id="scoreEl">0</span>
+          </p>
+          <p>
+            <span id="player-name">¡Introduce tu nombre!</span>
+          </p>
+        </div>
+
+        <div class="flex flex-wrap text-black">
+          <dialog id="pacman-dialog" class="flex flex-column align-center justify-center  mobile-hidden">
+            <p>¡Introduce tu nombre para empezar a jugar!</p>
+            <form method="dialog">
+              <input type="text" placeholder="Invitado" value="Invitado" id="name-input">
+              <button id="start-button">Start</button>
+            </form>
+          </dialog>
+          <dialog id="pacman-restart-dialog" class="flex-column align-center justify-center">
+            <p>¡Has perdido!</p>
+            <p>¿Quieres volver a jugar?</p>
+            <form method="dialog">
+              <button id="restart-button">Restart</button>
+            </form>
+          </dialog>
+          <dialog id="victory-dialog" class="flex-column align-center justify-center">
+            <p>¡Has ganado!</p>
+            <p>Próximamente más niveles. ¡Gracias por jugar!</p>
+          </dialog>
+          <dialog id="countdown-el" class="align-center justify-center"></dialog>
+          <canvas class="mobile-hidden red-border"></canvas>
+          <div id="vidas-container" class="flex absolute"></div>
+          <div class="padding-1 red-border">
+            <div>
+              <h4>High Scores:</h4>
+              <ol id="highscores-ol">
+              </ol>
+            </div>
+            <div class="controles mobile-hidden">
+              <div class="flex align-center">
+                <img src="horarios/controles/W.png" alt="W key" height="100px" class="pixel-art key-img">
+                <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="70px" class="pixel-art arrow-img">
+              </div>
+              <div class="flex align-center">
+                <img src="horarios/controles/A.png" alt="A key" height="100px" class="pixel-art key-img">
+                <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="70px" class="pixel-art arrow-img arrow-left">
+              </div>
+              <div class="flex align-center">
+                <img src="horarios/controles/S.png" alt="S key" height="100px" class="pixel-art key-img">
+                <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="70px" class="pixel-art arrow-img arrow-down">
+              </div>
+              <div class="flex align-center">
+                <img src="horarios/controles/D.png" alt="D key" height="100px" class="pixel-art key-img">
+                <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="70px" class="pixel-art arrow-img arrow-right">
+              </div>
+            </div>
+            <script>
+              let controlesWrapper = document.querySelector(".controles");
+              let teclas = controlesWrapper.querySelectorAll('.key-img');
+              let flechas = controlesWrapper.querySelectorAll('.arrow-img');
+              let index = 0;
+              let intervalId;
+
+              function changeImageSrc() {
+                const tecla = teclas[index];
+                const flecha = flechas[index];
+                const originalSrc = tecla.getAttribute('src');
+                const newSrc = originalSrc.replace('.png', 'p.png');
+
+                tecla.setAttribute('src', newSrc);
+
+                setTimeout(() => {
+                  tecla.setAttribute('src', originalSrc);
+                }, 500);
+
+                index = (index + 1) % teclas.length;
+              }
+
+              function handleIntersection(entries) {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    intervalId = setInterval(changeImageSrc, 1000);
+                  } else {
+                    clearInterval(intervalId);
+                  }
+                });
+              }
+
+              const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5 // Porcentaje de visibilidad requerido para considerar que el elemento es visible
+              };
+              //no se ejecuta hasta que se vea la mitad de los controles 
+              const observer = new IntersectionObserver(handleIntersection, options);
+              observer.observe(controlesWrapper);
+
+            </script>
+          </div>
+        </div>
+      </section>-->
+      <section class="pacman-wrapper small-shadow flex flex-wrap">
+        <div class="flex-1 relative">
+          <div class="flex absolute justify-between align-center width-100 pacman-info">
+            <div id="vidas-container" class="flex"></div>
+            <div>
+              <span>SCORE: </span> <span id="scoreEl">0</span>              
+            </div>
+          </div>
+          <dialog id="pacman-dialog" class="flex flex-column align-center justify-center  mobile-hidden">
+            <p>¡Introduce tu nombre para empezar a jugar!</p>
+            <form method="dialog">
+              <input type="text" placeholder="Invitado" value="Invitado" id="name-input">
+              <button id="start-button">Start</button>
+            </form>
+          </dialog>
+          <dialog id="pacman-restart-dialog" class="flex-column align-center justify-center">
+            <p>¡Has perdido!</p>
+            <p>¿Quieres volver a jugar?</p>
+            <form method="dialog">
+              <button id="restart-button">Restart</button>
+            </form>
+          </dialog>
+          <dialog id="victory-dialog" class="flex-column align-center justify-center">
+            <p>¡Has ganado!</p>
+            <p>Próximamente más niveles. ¡Gracias por jugar!</p>
+          </dialog>
+          <dialog id="countdown-el" class="align-center justify-center"></dialog>
+          <canvas class="mobile-hidden red-border"></canvas>
+        </div>
+        <div class="controles-wrapper text-black relative">
+          <h3 class="blue-bg-pc pacman-font white-text text-center padding-2 brdr-rd-bottom margin-top-h2">EL PACMAN <br> DE  <br> ARCADE LEVELS</h3>
+          <p class="margin-tb-1 overflow-hidden">
+            <div class="text-center"> Jugando como: </div>
+            <div id="player-name">¡Introduce tu nombre!</div>
+          </p>
+          <!-- <div class="flex justify-between">
+            <div>SCORE: </div>
+            <div>
+              LIVES LEFT:
+            </div>
+          </div> -->
+          <div class="controles mobile-hidden flex-1">
+            <h4 class="text-center margin-tb-1">CONTROLES:</h4>
+            <div class="flex justify-center">
+              <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="40px" class="pixel-art arrow-img arrow-down">
+            </div>
+            <div class="flex justify-center">
+              <img src="horarios/controles/W.png" alt="W key" height="50px" class="pixel-art key-img">
+            </div>
+            <div class="flex justify-center align-center">
+              <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="40px" class="pixel-art arrow-img arrow-left" style="rotate: 270deg;">
+              <img src="horarios/controles/A.png" alt="A key" height="50px" class="pixel-art key-img">
+              <img src="horarios/controles/S.png" alt="S key" height="50px" class="pixel-art key-img">
+              <img src="horarios/controles/D.png" alt="D key" height="50px" class="pixel-art key-img">
+              <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="40px" class="pixel-art arrow-img arrow-right" style="rotate: 90deg;">
+            </div>
+            <div class="flex justify-center">
+              <img src="horarios/controles/8bitArrow.png" alt="8bit Arrow" height="40px" class="pixel-art arrow-img" style="rotate: 180deg;">
+            </div>
+          </div>
+          <img src="horarios/pacmandialogue.gif" alt="Pacman Dialogue Box" class="absolute dialogue-pixel pixel-art" draggable="false">
+          <img src="horarios/pacman-pixelart.png" alt="Pacman Pixel Art" height="250px" class="absolute pacman-pixel pixel-art" draggable="false">
+          <!-- <figure class="advice-bubble absolute">
+            <img src="horarios/pixel-bubble.png" alt="Consejos" class="pixel-art">
+            <figcaption class="absolute"></figcaption>
+          </figure> -->
+        </div>
+        <script>
+
+          // const consejos = [
+          //   "Es mejor mantener pulsada la tecla a donde quieres ir que solo darle un click.",
+          //   "Si ya te has comido un Power Up y te comes otro los tiempos no se sumarán."
+          // ]
+
+          // let pacmanDialogue = document.querySelector('.pacman-pixel');
+
+          // let adviceBubble = document.querySelector('.advice-bubble');
+
+          // let adviceImg = adviceBubble.querySelector('img');
+
+          // let adviceText = adviceBubble.querySelector('figcaption');
+
+          // let dialoguePixel = document.querySelector('.dialogue-pixel'); //el gif de necesitas ayuda?
+
+          // pacmanDialogue.addEventListener('click', ()=>{
+          //   console.log("toma consejo");
+          //   adviceBubble.style.opacity = 1;
+          //   adviceBubble.style.display = "flex";
+          //   adviceImg.style.height = "150px";
+          //   dialoguePixel.classList.add("shrink-dialogue");
+          //   const randomConsejo = consejos[Math.floor(Math.random() * consejos.length)];
+          //   adviceText.textContent = randomConsejo;
+          // })
+
+
+          let controlesWrapper = document.querySelector(".controles");
+          let teclas = controlesWrapper.querySelectorAll('.key-img');
+          let flechas = controlesWrapper.querySelectorAll('.arrow-img');
+          let index = 0;
+          let intervalId;
+
+          function changeImageSrc() {
+            const tecla = teclas[index];
+            const flecha = flechas[index];
+            const originalSrc = tecla.getAttribute('src');
+            const newSrc = originalSrc.replace('.png', 'p.png');
+
+            tecla.setAttribute('src', newSrc);
+
+            setTimeout(() => {
+              tecla.setAttribute('src', originalSrc);
+            }, 500);
+
+            index = (index + 1) % teclas.length;
+          }
+
+          function handleIntersection(entries) {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                intervalId = setInterval(changeImageSrc, 1000);
+              } else {
+                clearInterval(intervalId);
+              }
+            });
+          }
+
+          const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // Porcentaje de visibilidad requerido para considerar que el elemento es visible
+          };
+          //no se ejecuta hasta que se vea la mitad de los controles 
+          const observer = new IntersectionObserver(handleIntersection, options);
+          observer.observe(controlesWrapper);
+
+        </script>
+        <div class="red-border highscores-bg highscores-padding relative overflow-hidden">
+          <div class="relative flex flex-column align-center highscores-wrapper">
+            <h4 class="mage-font margin-tb-1">HIGH SCORES</h4>
+            <h5 class="margin-tb-1">TOP 10</h5>
+            <ol class="margin-tb-1 width-100" id="highscores-ol">
+            </ol>
+          </div>
+          <img src="horarios/espasio.png" alt="8bit Espacio Paisaje" class="absolute espasio">
+        </div>
+      </section>
+    </main>
+  
+    <footer class="dark-blue-bg flex flex-column mage-font relative text-kinda-big">
+      <hr class="red-hr-footer">
+      <div class="flex justify-between footer-1">
+        <div class="flex-1 padding-lr-footer">
+          <img src="footerlogo.png" alt="Arcade Levels Logo" height="50px" class="margin-auto">
+          <div>
+            Diseñado y Programado por Mi Empresa SL. <br>
+            Contacto: <a href="mailto:guillermobernallou@gmail.com">guillermobernallou@gmail.com</a> <br>
+            Redes:
+          </div>
+          <div class="flex justify-evenly text-big-3">
+            <a href="#" target="_blank"><i class="fa-brands fa-github text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook text-black white-hover transitions-all-ease-0-2s"></i></a>
+          </div>
+        </div>
+        <div class="flex-1 padding-lr-footer">
+          <h5 class="text-center text-kinda-big">Contacto</h5>
+          <div class="flex">
+            <i class="fa-solid fa-house text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="https://goo.gl/maps/jMw6Us4fk7sH8wWC8" target="_blank">Carretera Valencia KM 7.8 Nave 72A 50410 - Cuarte de Huerva - Zaragoza</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-phone text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="tel:+3466362429">+34 663 624 29</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-envelope text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="mailto:contacto@arcadelevels.com">contacto@arcadelevels.com</a>
+          </div>
+        </div>
+        <div class="text-center flex-1 padding-lr-footer">
+          <h5 class="text-kinda-big">Horario de apertura/Opening hours</h5>
+          <div>Sábado/Saturday:</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+          <div>Domingo/Sunday</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+        </div>
+      </div>
+      <div class="flex flex-column medium-blue-bg footer-xtra relative">
+        <img src="footer-arcade.png" alt="Arcade 8bit" class="absolute footer-arcade" height="75px">
+        <hr class="footer-hr-2">
+        <div class="flex justify-evenly footer-xtra-margin">
+          <div>
+            Arcade Levels SL  -  CIF B99558611 
+          </div>
+          <div>Copyright © 2022 por Arcade Levels. Todos los derechos reservados</div>
+        </div>
+      </div>
+    </footer>
+  
+
+    <script type="module" src="/imports.js"></script>
+    <script type="module" src="/pacman.js"></script>
+    <!--<script type="module" src="/map.js"></script>-->
+    <script type="module" src="/horarios.js"></script>
+    <script type="module" src="/contador.js"></script>
+    <script type="module" src="/destroyer.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="49.804001"
+   height="105.092"
+   viewBox="0 0 49.804 105.092"
+   enable-background="new 0 0 1096 780"
+   xml:space="preserve"
+   sodipodi:docname="adultos_joystick.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   inkscape:export-filename="Arcade Button TypeA joystick.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1653" /><sodipodi:namedview
+   id="namedview1651"
+   pagecolor="#505050"
+   bordercolor="#eeeeee"
+   borderopacity="1"
+   inkscape:showpageshadow="0"
+   inkscape:pageopacity="0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#505050"
+   showgrid="false"
+   inkscape:zoom="1.423279"
+   inkscape:cx="152.46484"
+   inkscape:cy="132.44065"
+   inkscape:window-width="1920"
+   inkscape:window-height="1001"
+   inkscape:window-x="-9"
+   inkscape:window-y="-9"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+
+
+<path
+   fill="#484442"
+   d="m 24.94502,105.092 h -0.087 c -4.104,0 -7.432,-3.327 -7.432,-7.431003 v -57.337 h 14.949 v 57.337 c 10e-4,4.104003 -3.326,7.431003 -7.43,7.431003 z"
+   id="path572" /><path
+   fill="#383432"
+   d="M 26.04702,40.322997 V 104.981 c 3.577,-0.536 6.329,-3.593 6.329,-7.320003 v -57.337 h -6.329 z"
+   id="path574" /><g
+   id="g582"
+   transform="translate(-745.82798,-68.119003)">
+				<circle
+   fill="#d4321e"
+   cx="770.72998"
+   cy="93.021004"
+   r="24.902"
+   id="circle576" />
+				<path
+   fill="#e34031"
+   d="m 763.181,106.296 c 9.359,-2.565 17.328,-8.47 22.548,-16.364 3.222,-4.873 1.993,-11.423 -2.824,-14.727 -4.385,-3.007 -9.936,-4.436 -15.84,-3.464 -9.224,1.519 -16.529,9.146 -17.73,18.417 -0.425,3.278 -0.107,6.429 0.804,9.316 1.712,5.432 7.549,8.328 13.042,6.822 z"
+   id="path578" />
+				<circle
+   fill="#ec6457"
+   cx="764.59497"
+   cy="81.205002"
+   r="3.74"
+   id="circle580" />
+			</g>
+
+
+</svg>

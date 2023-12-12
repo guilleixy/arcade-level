@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCADE LEVELS</title>
+    <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  </head>
+  <body>
+    <header class="flex align-center dark-blue-bg justify-center relative">
+      <div class="absolute header-effect">
+        <img src="sonic-running.gif" alt="" height="100%" style="margin-left: 150px;">
+      </div>
+      <script>
+
+        const corredores = [
+          'sonic-running.gif',
+          'knuckles-running.webp',
+          'tails-running.gif',
+          'kirby-running.gif'
+        ]
+
+        const fondos = [
+          'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,0,0,1) 35%, rgba(244,20,20,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(178,107,19,1) 35%, rgba(219,130,12,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,4,56,1) 35%, rgba(219,12,189,1) 100%)'
+        ]
+
+        const headerEffect = document.querySelector('.header-effect');
+        const sonic = headerEffect.querySelector('img');
+        function startAnimation() {
+
+          let indiceAleatorio = Math.floor(Math.random() * corredores.length)
+
+          headerEffect.style.background = fondos[indiceAleatorio];
+          sonic.src = corredores[indiceAleatorio];
+
+          headerEffect.classList.add('header-effect-anim');
+          const randomOpacity = Math.random();
+
+          // Establecer la opacidad en base al número aleatorio
+          if (randomOpacity < 0.5) {
+            sonic.style.opacity = '0';
+          } else {
+            sonic.style.opacity = '1';
+            headerEffect.style.background = "none";
+          }
+        }
+
+        function restartAnimation() {
+          // headerEffect.classList.remove('header-effect-anim-reverse');
+          headerEffect.classList.remove('header-effect-anim');
+          // Generar un número aleatorio entre 1000 y 20000
+          let tiempoAleatorio = Math.floor(Math.random() * (20000 - 1000 + 1)) + 1000;
+
+          // Esperar el tiempo aleatorio y luego llamar a la función startAnimation
+          setTimeout(startAnimation, tiempoAleatorio);
+          //20000
+        }
+        //deberia ejecutarse por primera vez un poco despues, idealmente despues de que se cargue (creo)
+        setTimeout(()=>{
+          startAnimation();
+        },1000)
+        setInterval(restartAnimation, 5000); 
+      </script>
+      <div class=" white-bg brdr-red-black brdr-rd-small pointer flex align-center justify-center nav-logo-wrapper ">
+        <div>
+          <h1 class="sega-font text-center red-text logo-1">ARCADE LEVELS</h1>
+          <div class="flex header-pacman-wrapper">
+            <img class="pacman-gif" src="pacman.gif" alt="pacman">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+          </div>
+        </div>
+        <img class="header-img" src="logo-arcade.png" alt="logo-arcade">
+      </div>
+      
+      <nav class="flex">
+          <ul class="ls-none flex align-center justify-center nav-text-size text-center mage-font nav-list">
+              <button class="padding-login-nav flex align-center justify-center"><i class="fa-solid fa-circle-user"></i> Iniciar Sesión</button>
+              <li class="padding-li-nav"><a class="dk-underline" href="horarios.html">Horarios</a></li>
+              <li  class="padding-li-nav"><a class="dk-underline-perm" href="tarifas.html">Tarifas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="galeria.html">Galería imágenes</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="index.html">Nuestros juegos</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="reservas.html">Reservas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="compraventa.html">CompraVenta y Reparaciones</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="contacto.html">Contacto</a></li>
+          </ul> <!--al hacer hover los iconos se hacen un poco mas pequeños-->
+          <div class="flex align-center justify-center overflow-hidden">
+            <a href="https://www.youtube.com/c/ArcadeLevels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-youtube brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.instagram.com/arcade_levels/" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-instagram brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.tiktok.com/@arcade_levels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-tiktok brick-bounce" id="coin-add"></i>
+              <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+          </div>
+      </nav>
+      <img src="link-peeking.png" height="150px" class="absolute link-peeking pointer peeking" alt="" draggable="false">
+      <img height="20px" width="auto" class="absolute coin-peeking" src="Coin.gif" alt="coin">
+      <div class="absolute flex align-center padding-2 relative brdr-rd-bottom-2" id="coin-counter-wrapper">
+        <img class="counter-coin" height="20px" src="coin.png" alt="coin" draggable="false">
+        <div>x</div><div id="coin-counter"></div>
+        <div class="relative">
+          <img src="marioblock.png" alt="mario block" height="18px" class="cursor-interr question-img-coins" >     
+          <div class="absolute grey-bg-semitrans text-small-1 question-coin-hover">
+            <p>Hemos escondido monedas por toda la página.</p>
+            <p>Cada vez que consigas una moneda, <br> se sumará al contador global.</p>
+            <p>¡Encuentralas todas y <br>ayúdanos a conseguir 1 Millón de Monedas!</p>
+            <!--poner una imagen?-->
+          </div>
+        </div>
+
+      </div>
+    </header>
+  
+    <main class="lr-no-padding car-bg relative">
+      <div id="fondo-tarifas"></div>
+      <section class="flex align-center flex-column padding-extra-top" id="tarifas-section">
+        <h2 class="sega-font red-text white-bg brdr-red-black brdr-rd-small padding-3 text-big-4">TARIFAS</h2>
+        <div class="flex padding-1 width-100 justify-center flex-wrap">
+          <div>
+            <h3 class="text-center gumball-font  text-big-3">Entrada individual</h3>
+            <div class="flex flex-column black-bg brdr-orange-lr arcade-dim arcade-margins small-shadow">
+              <div class="brdr-black-tb height-15 flex align-center justify-center">
+                <img src="tarifas/marquesinas/spaceinvmarquee.jpg" alt="" class="max-width">
+              </div>
+              <div class="height-30 overflow-hidden pantalla-arcade">
+                <img src="tarifas/marquesinas/marcospaceinv.png" alt="tarifas-adultos" class="bg-adultos max-all marquesina-screen">
+              </div>
+              <div class="relative height-25 flex justify-center brdr-black-blue joystick-wrapper">
+                <img class="max-height controls" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false" usemap="#controls-map">
+                <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick" draggable="false" id="joystick">
+                <map name="controls-map">
+                  <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                  <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                  <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+                </map>
+                
+              </div>
+              <div class="height-30 padding-1 mario-font nav-text-size text-center space-dark-blue-bg text-black">
+                <div class="brdr-rd-small brdr-black padding-2 "> <!-- segun la pantalla el fondo con texto negro se ve mal -->
+                  <p>Entrada general: 15€</p>
+                  <h4 class="red-text">Condiciones:</h4>
+                  <p>Entrada valida para mayores de 8 años</p>
+                  <h4 class="red-text">Duración:</h4>
+                  <p>4 Horas de juego en la sesion que se elija</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-center gumball-font  text-big-3">Entrada infantil</h3>
+            <div class="flex flex-column black-bg brdr-red-lr arcade-dim arcade-margins small-shadow">
+              <div class="brdr-black-tb height-15 flex align-center justify-center">
+                <img src="tarifas/marquesinas/pacmanmarquee.jpg" alt="" class="max-width">
+              </div>
+              <div class="height-30 overflow-hidden pantalla-arcade">
+                <img src="tarifas/marquesinas/pacmanmarco.png" alt="tarifas-adultos" class="bg-infantil max-all  marquesina-screen">
+              </div>
+              <div class="relative height-25 flex justify-center brdr-black-blue joystick-wrapper">
+                <img class="max-height controls" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false" usemap="#controls-map2">
+                <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick" draggable="false" id="joystick">
+                <map name="controls-map2">
+                  <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                  <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                  <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+                </map>
+              </div>
+              <div class="height-30 padding-1 mario-font nav-text-size  text-center text-black yellow-bg">
+                <div class="brdr-rd-small brdr-black padding-2">
+                  <p>ENTRADA GENERAL: 13€</p>
+                  <h4 class="red-text">CONDICIONES:</h4>
+                  <p>ENTRADA VÁLIDA PARA MENORES DE 8 AÑOS</p>
+                  <h4 class="red-text">DURACIÓN:</h4>
+                  <p>4 HORAS DE JUEGO EN LA SESIÓN QUE SE ELIJA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-center gumball-font  text-big-3">Entrada combinada</h3>
+            <div class="flex flex-column black-bg brdr-white-lr arcade-dim arcade-margins small-shadow" id="adultos">
+              <div class="brdr-black-tb height-15 flex align-center justify-center">
+                <img src="tarifas/marquesinas/dkmarquee.jpg" alt="" class="max-width">
+              </div>
+              <div class="height-30 overflow-hidden pantalla-arcade">
+                <img src="tarifas/marquesinas/dkmarco.png" alt="tarifas-adultos" class="bg-adultos max-all  marquesina-screen">
+              </div>
+              <div class="relative height-25 flex justify-center brdr-black-blue joystick-wrapper">
+                <img class="max-height  controls" src="tarifas/marquesinas/adultos.svg" draggable="false"  usemap="#controls-map3">
+                <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick" draggable="false" id="joystick">
+                <map name="controls-map3">
+                  <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                  <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                  <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+                </map>
+              </div>
+              <div class="height-30 padding-1 mario-font nav-text-size text-center text-black light-blue-bg ">
+                <div class="brdr-rd-small brdr-black padding-2">
+                  <p>ENTRADA GENERAL: 25€</p>
+                  <h4 class="red-text">CONDICIONES:</h4>
+                  <p>ENTRADA VÁLIDA PARA MAYORES DE 8 AÑOS</p>
+                  <h4 class="red-text">DURACIÓN:</h4>
+                  <p>8 HORAS DE JUEGO, SESIÓN DE MAÑANA Y TARDE</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-center  gumball-font  text-big-3">Entradas grupos</h3>
+            <div class="flex flex-column black-bg brdr-yellow-lr arcade-dim mario-font arcade-margins small-shadow">
+              <div class="brdr-black-tb height-15 flex align-center justify-center">
+                <img src="tarifas/marquesinas/mariomarquee.jpg" alt="" class="max-width">
+              </div>
+              <div class="height-30 overflow-hidden pantalla-arcade">
+                <img src="tarifas/marquesinas/marcomario.png" alt="tarifas-adultos" class="bg-adultos max-width  marquesina-screen">
+              </div>
+              <div class="relative height-25 flex justify-center brdr-black-tb black-bg joystick-wrapper">
+                <img class="max-height  controls" src="tarifas/marquesinas/adultos.svg" id="adultos"  draggable="false" usemap="#controls-map4">
+                <img src="tarifas/marquesinas/adultos_joystick.svg" alt="adultos_joystick" class="pointer absolute joystick " draggable="false" id="joystick">
+                <map name="controls-map4">
+                  <area shape="circle" coords="140,102,25" alt="Área 2" class="boton-rojo pointer">
+                  <area shape="circle" coords="200,72,25" alt="Área 2" class="boton-amarillo pointer">
+                  <area shape="circle" coords="245,45,25" alt="Área 3" class="boton-verde pointer">
+                </map>
+              </div>
+              <div class="height-30 padding-1 nav-text-size text-center black-bg">
+                <div class="brdr-rd-small brdr-red-black padding-2">
+                  <p>Pack 10 entradas</p>
+                  <h4 class="red-text">Condiciones:</h4>
+                  <p>Se pagan 9 entradas y 1 es gratuita, la de menor valor</p>
+                  <h4 class="red-text">Duración:</h4>
+                  <p>4 Horas de juego en la sesión que se elija</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      
+    </main>
+  
+    <footer class="dark-blue-bg flex flex-column mage-font relative text-kinda-big">
+      <hr class="red-hr-footer">
+      <div class="flex justify-between footer-1">
+        <div class="flex-1 padding-lr-footer">
+          <img src="footerlogo.png" alt="Arcade Levels Logo" height="50px" class="margin-auto">
+          <div>
+            Diseñado y Programado por Mi Empresa SL. <br>
+            Contacto: <a href="mailto:guillermobernallou@gmail.com">guillermobernallou@gmail.com</a> <br>
+            Redes:
+          </div>
+          <div class="flex justify-evenly text-big-3">
+            <a href="#" target="_blank"><i class="fa-brands fa-github text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook text-black white-hover transitions-all-ease-0-2s"></i></a>
+          </div>
+        </div>
+        <div class="flex-1 padding-lr-footer">
+          <h5 class="text-center text-kinda-big">Contacto</h5>
+          <div class="flex">
+            <i class="fa-solid fa-house text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="https://goo.gl/maps/jMw6Us4fk7sH8wWC8" target="_blank">Carretera Valencia KM 7.8 Nave 72A 50410 - Cuarte de Huerva - Zaragoza</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-phone text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="tel:+3466362429">+34 663 624 29</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-envelope text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="mailto:contacto@arcadelevels.com">contacto@arcadelevels.com</a>
+          </div>
+        </div>
+        <div class="text-center flex-1 padding-lr-footer">
+          <h5 class="text-kinda-big">Horario de apertura/Opening hours</h5>
+          <div>Sábado/Saturday:</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+          <div>Domingo/Sunday</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+        </div>
+      </div>
+      <div class="flex flex-column medium-blue-bg footer-xtra relative">
+        <img src="footer-arcade.png" alt="Arcade 8bit" class="absolute footer-arcade" height="75px">
+        <hr class="footer-hr-2">
+        <div class="flex justify-evenly footer-xtra-margin">
+          <div>
+            Arcade Levels SL  -  CIF B99558611 
+          </div>
+          <div>Copyright © 2022 por Arcade Levels. Todos los derechos reservados</div>
+        </div>
+      </div>
+    </footer>
+  
+    <script type="module" src="/arcade.js"></script>
+    <script type="module" src="/tarifas.js"></script>
+    <script type="module" src="/imports.js"></script>
+    <script type="module" src="/contador.js"></script>
+  </body>
+</html>

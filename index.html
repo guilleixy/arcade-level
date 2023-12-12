@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/icon.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCADE LEVELS</title>
+    <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  </head>
+  <body>
+    <!-- <div id="pop-up" class="flex align-center justify-center">
+      <div class="flex flex-column white-bg text-black brdr-red-black padding-1 text-kinda-normal ">
+        <h5 class="text-center">¡Hola!</h5>
+        <p>Esta página está aún en construcción</p>
+        <p>De momento, están disponibles las páginas de </p>
+        <ul class="padding-2">
+          <li>Nuestros juegos</li>
+          <li>Tarifas</li>
+          <li>Horarios</li>
+        </ul>
+        <p>Prácticamente toda la página es interactiva.</p>
+        <p>¡Pasa el ratón o clickea para descubrir todos los Easter Eggs!</p>
+        <button onclick="cerrarTab()" class="pointer">Cerrar</button>
+      </div>
+    </div>
+    <script>
+      // Verificar si el pop-up ya se ha mostrado antes
+      if (!sessionStorage.getItem('popupShown')) {
+        mostrarPopUp();
+      }
+
+      function mostrarPopUp() {
+        document.getElementById('pop-up').style.opacity = '1';
+        document.getElementById('pop-up').style.display = 'flex';
+        document.body.style.overflow = "hidden";
+
+        // Guardar información en sessionStorage indicando que el pop-up ya se mostró
+        sessionStorage.setItem('popupShown', 'true');
+      }
+
+      function cerrarTab() {
+        document.getElementById('pop-up').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('pop-up').style.display = 'none';
+        }, 300);
+        document.body.style.overflow = "visible";
+      }
+    </script> -->
+    <header class="flex align-center dark-blue-bg justify-center relative">
+      <div class="absolute header-effect">
+        <img src="sonic-running.gif" alt="" height="100%" style="margin-left: 90px;">
+      </div>
+      <script>
+
+        const corredores = [
+          'sonic-running.gif',
+          'knuckles-running.webp',
+          'tails-running.gif',
+          'kirby-running.gif',
+          'naruto-running.gif'
+        ]
+
+        const fondos = [
+          'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,0,0,1) 35%, rgba(244,20,20,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(178,107,19,1) 35%, rgba(219,130,12,1) 100%)',
+          'linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(55,4,56,1) 35%, rgba(219,12,189,1) 100%)',
+          'linear-gradient(90deg, rgba(89,16,0,1) 0%, rgba(246,94,0,1) 58%, rgba(0,44,255,1) 100%)'
+        ]
+
+        const headerEffect = document.querySelector('.header-effect');
+        const sonic = headerEffect.querySelector('img');
+        function startAnimation() {
+
+          let indiceAleatorio = Math.floor(Math.random() * corredores.length)
+
+          headerEffect.style.background = fondos[indiceAleatorio];
+          sonic.src = corredores[indiceAleatorio];
+
+
+          const randomOpacity = Math.random();
+
+          // Establecer la opacidad en base al número aleatorio
+          if (randomOpacity < 0.5) {
+            sonic.style.opacity = '0';
+            headerEffect.classList.add('header-effect-anim');
+          } else {
+            sonic.style.opacity = '1';
+            headerEffect.style.background = "none";
+            headerEffect.classList.add('header-effect-anim-2');
+            headerEffect.classList.add('header-effect-brdrd');
+          }
+        }
+
+        function restartAnimation() {
+          // headerEffect.classList.remove('header-effect-anim-reverse');
+          headerEffect.classList.remove('header-effect-brdrd');
+          headerEffect.classList.remove('header-effect-anim');
+          headerEffect.classList.remove('header-effect-anim-2');
+          // Generar un número aleatorio entre 1000 y 20000
+          let tiempoAleatorio = Math.floor(Math.random() * (20000 - 1000 + 1)) + 1000;
+
+          // Esperar el tiempo aleatorio y luego llamar a la función startAnimation
+          setTimeout(startAnimation, tiempoAleatorio);
+          //20000
+        }
+        //deberia ejecutarse por primera vez un poco despues, idealmente despues de que se cargue (creo)
+        setTimeout(()=>{
+          startAnimation();
+        },1000)
+        setInterval(restartAnimation, 6000); 
+      </script>
+      <div class="z-index-2 white-bg brdr-red-black brdr-rd-small pointer flex align-center justify-center nav-logo-wrapper">
+        <div>
+          <h1 class="sega-font text-center red-text logo-1">ARCADE LEVELS</h1>
+          <div class="flex header-pacman-wrapper">
+            <img class="pacman-gif" src="pacman.gif" alt="pacman">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+          </div>
+        </div>
+        <img class="header-img" src="logo-arcade.png" alt="logo-arcade">
+      </div>
+      
+      <nav class="flex z-index-2">
+          <ul class="ls-none flex align-center justify-center nav-text-size text-center mage-font">
+              <button class="padding-login-nav flex align-center justify-center pointer hover-light"><i class="fa-solid fa-circle-user"></i> Iniciar Sesión</button>
+              <li class="padding-li-nav"><a class="dk-underline" href="horarios.html">Horarios</a></li>
+              <li  class="padding-li-nav"><a class="dk-underline" href="tarifas.html">Tarifas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="galeria.html">Galería imágenes</a></li>
+              <li class="padding-li-nav"><a class="dk-underline-perm" href="index.html">Nuestros juegos</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="reservas.html">Reservas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="compraventa.html">CompraVenta y Reparaciones</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="contacto.html">Contacto</a></li>
+          </ul> <!--al hacer hover los iconos se hacen un poco mas pequeños-->
+          <div class="flex align-center justify-center overflow-hidden">
+            <a href="https://www.youtube.com/c/ArcadeLevels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-youtube brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.instagram.com/arcade_levels/" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-instagram brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.tiktok.com/@arcade_levels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-tiktok brick-bounce" id="coin-add"></i>
+              <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+          </div>
+      </nav>
+      <img src="yoshi-peeking.png" height="55px" class="absolute yoshi-peeking pointer peeking z-index-9" alt="" draggable="false">
+      <img height="20px" width="auto" class="absolute coin-peeking" src="Coin.gif" alt="coin">
+      <div class="absolute flex align-center padding-2 relative brdr-rd-bottom-2" id="coin-counter-wrapper">
+        <img class="counter-coin" height="20px" src="coin.png" alt="coin" draggable="false">
+        <div>x</div><div id="coin-counter"></div>
+        <div class="relative">
+          <img src="marioblock.png" alt="mario block" height="18px" class="cursor-interr question-img-coins" >     
+          <div class="absolute grey-bg-semitrans text-small-1 question-coin-hover">
+            <p>Hemos escondido monedas por toda la página.</p>
+            <p>Cada vez que consigas una moneda, <br> se sumará al contador global.</p>
+            <p>¡Encuentralas todas y <br>ayúdanos a conseguir 1 Millón de Monedas!</p>
+            <!--poner una imagen?-->
+          </div>
+        </div>
+
+      </div>
+    </header>
+  
+    <main>
+      <section id="juegos">
+          <article>
+            <div class="brdr-rd brdr-red border h2-carr flex align-end relative small-shadow">
+              <h2 class="sega-font red-text letter-spacing-2 padding-1">NUESTROS<br><span class=" letter-spacing-1 text-big-1">ARCADES</span></h2>
+              <div class="carr-img brdr-rd mobile-hidden"></div>
+              <div class="mobile-hidden">
+                <button class="prev-button no-border-bg arrow-button pointer absolute opacity-05 button-arrow-left"><img height="25px" src="flechawhite-left.svg" alt="flecha izquierda"></button>
+                <button class="next-button no-border-bg arrow-button pointer absolute opacity-05 button-arrow-right"><img height="25px" src="flechawhite.svg" alt="flecha derecha"></button>
+              </div>
+            </div>
+            <div class="text-center mage-font padding-1">
+              <p>A primeros de cada mes, presentaremos una nueva máquina en Arcade Levels. Podéis seguirlo en nuestras redes sociales.</p>
+              <p> Si clickeas en la imagen del juego que te interesa, podrás saber si la maquina esta en funcionamiento o en mantenimiento.</p>
+            </div>
+            <div class="flex flex-wrap margin-top-small justify-center">
+              <div class="inline-block flex-wrap justify-evenly hover-red-border relative pointer arcade-container-margin-padding brdr-rd-small overflow-hidden panel-arcade dark-blue-bg-op transitions-all-ease-0-3s">
+                <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim marg-bot-arcade-titulo arcade-titulo-font-size">Outrun</span></div>
+                <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
+                <div class="panel-col-1">
+                  <img src="arcades_juegos/outrun_panel.webp" alt="" class="panel-img-ppal">
+                  <div class="sld-wrp hidden">
+                    <h4 class="text-center mage-font">Versiones Arcade y Pantallas</h4>
+                    <div class="slider-for">
+                      <div class="slide-container">
+                        <img class="slide-cointainer-img" src="arcades_juegos/outrun/1.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun/2.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun/3.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun/4.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun/5.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun/6.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="slider-nav">
+                      <img  class="slide-btn" src="arcades_juegos/outrun/1.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun/2.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun/3.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun/4.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun/5.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun/6.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-col-2 hidden flex flex-column justify-evenly">
+                  <div class="raleway-font">
+                    <h4 class="boing-anim-perma text-center mage-font">OutRun</h4>
+                    <p>
+                      Outrun es un juego de carreras creado en 1986 por Yu Suzuki y Sega-AM2.
+                      La idea es recorrer cinco etapas antes de que se termine el tiempo, para 
+                      conseguirlo nos pondríamos a los mandos de un Ferrari Testarossa descapotable rojo con una mujer rubia como acompañante.
+                    </p>
+                    <p>
+                      Hay otros cinco tipos de coche que podremos encontrar en las carreteras de este juego.
+                    </p>
+                    <p>
+                      Para llegar a la meta hay que recorrer cinco etapas, al final de cada etapa el camino se divide 
+                      en dos y se puede elegir la siguiente etapa entre dos posibles, El lado izquierdo es mas facil y 
+                      cada vez que la terminas, el tiempo de juego aumenta.
+                    </p>
+                    <p>
+                      Cuando este tiempo llega a 0, la partida acaba y un mapa describiendo las etapas recorridas aparece. 
+                      Si conseguimos finalizar la quinta etapa antes de que se acabe el tiempo, aparece un final, cada final 
+                      es diferente en función de cuál sea la última etapa, ya que hay 5 etapas posibles.
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap text-center justify-evenly">
+                    <div class="">
+                      <h4>Estado:</h4>
+                      <hr>
+                      <div class="shiny-hover cursor-default relative"><img src="arcades_juegos/yoshihappy.gif" class="absolute yoshi-estado" height="60px" alt="" draggable="false">EN FUNCIONAMIENTO</div>
+                      <!--<div class="flex"> 
+                        <img src="arcades_juegos/yoshiangry.gif" height="55px" alt="" class="red-filter" draggable="false">
+                        <img src="arcades_juegos/yoshihappy.gif" height="80px" alt="" draggable="false">
+                      </div>-->
+                    </div>
+                    <div>
+                      <h4>Records:</h4>
+                      <hr>
+                        <a class="pointer relative underline-grow" href="#">ENLACE EN AURCADE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-block flex-wrap justify-evenly hover-red-border relative pointer arcade-container-margin-padding brdr-rd-small overflow-hidden panel-arcade dark-blue-bg-op transitions-all-ease-0-3s">
+                <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim marg-bot-arcade-titulo arcade-titulo-font-size">Crazy Taxi</span></div>
+                <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
+                <div class="panel-col-1">
+                  <img src="arcades_juegos/crazytaxi_panel.webp" alt="" class="panel-img-ppal">
+                  <div class="sld-wrp hidden">
+                    <h4 class="text-center mage-font">Versiones Arcade y Pantallas</h4>
+                    <div class="slider-for">
+                      <div class="slide-container">
+                        <img class="slide-cointainer-img" src="arcades_juegos/crazytaxi/1.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/crazytaxi/2.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/crazytaxi/3.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/crazytaxi/4.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/crazytaxi/5.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/crazytaxi/6.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="slider-nav">
+                      <img  class="slide-btn" src="arcades_juegos/crazytaxi/1.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/crazytaxi/2.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/crazytaxi/3.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/crazytaxi/4.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/crazytaxi/5.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/crazytaxi/6.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-col-2 hidden flex flex-column justify-evenly">
+                  <div class="raleway-font">
+                    <h4 class="boing-anim-perma text-center mage-font">Crazy Taxi</h4>
+                    <p>
+                      El principal objetivo del juego es recoger a los clientes y llevarlos a su destino elegido lo más pronto posible. En el transcurso, se puede ganar dinero mediante la realización de trucos,
+                    </p>
+                    <p>
+                      El jugador se dirige al destino por una gran flecha verde en la parte superior de la pantalla.
+
+                      La flecha no se ajusta sobre la base de los obstáculos, sino que más bien apunta en la dirección general del destino. Una vez que el jugador llega al destino, debe dejarlo dentro de una zona especificada. Cuando se llega al destino, se suman la tarifa del cliente más el total de dinero que el jugador ha ganado..
+                    </p>
+                    <p>
+                      Bajo las reglas de Arcade, el jugador comienza con un plazo inicial de un minuto, que puede ampliarse a través de bonos de tiempo ganado en entregas rápidas.  La versión arcade del juego incluye sesenta niveles y un adicional de "Original" etapa añadida para las versiones de consola. 
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap text-center justify-evenly">
+                    <div class="">
+                      <h4>Estado:</h4>
+                      <hr>
+                      <div class="cursor-default relative"><img src="arcades_juegos/yoshiangry.gif" height="40px" alt="" class="red-filter absolute yoshi-estado yoshi-angry" draggable="false">EN MANTENIMIENTO</div>
+                      <!--<div class="flex"> 
+                        <img src="arcades_juegos/yoshiangry.gif" height="55px" alt="" class="red-filter absolute yoshi-estado" draggable="false">
+                        <img src="arcades_juegos/yoshihappy.gif" height="80px" alt="" draggable="false">
+                      </div>-->
+                    </div>
+                    <div>
+                      <h4>Records:</h4>
+                      <hr>
+                        <a class="pointer relative underline-grow" href="#">ENLACE EN AURCADE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-block flex-wrap justify-evenly hover-red-border relative pointer arcade-container-margin-padding brdr-rd-small overflow-hidden panel-arcade dark-blue-bg-op transitions-all-ease-0-3s">
+                <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim marg-bot-arcade-titulo arcade-titulo-font-size">18 Wheeler</span></div>
+                <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
+                <div class="panel-col-1">
+                  <img src="arcades_juegos/eighteen_panel.webp" alt="" class="panel-img-ppal">
+                  <div class="sld-wrp hidden">
+                    <h4 class="text-center mage-font">Versiones Arcade y Pantallas</h4>
+                    <div class="slider-for">
+                      <div class="slide-container">
+                        <img class="slide-cointainer-img" src="arcades_juegos/eighteenwheeler/1.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/eighteenwheeler/2.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/eighteenwheeler/3.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/eighteenwheeler/4.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/eighteenwheeler/5.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="slider-nav">
+                      <img  class="slide-btn" src="arcades_juegos/eighteenwheeler/1.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/eighteenwheeler/2.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/eighteenwheeler/3.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/eighteenwheeler/4.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/eighteenwheeler/5.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-col-2 hidden flex flex-column justify-evenly">
+                  <div class="raleway-font">
+                    <h4 class="boing-anim-perma text-center mage-font">18 Wheeler</h4>
+                    <p>
+                      18 Wheeler: American Pro Trucker es un juego arcade de conducción de camiones desarrollado en conjunto con la compañía Acclaim la compañía Sega con la ayuda de su equipo Sega AM2 para la distribución del título.
+                    </p>
+                    <p>
+                      La historia central del juego sigue a un grupo de conductores de camiones conformados por: "Asphlat Cowboy", "Stream Line", "Long Horn", "Nippon Maru" y "Highway Cat", los cuales son los encargados de conducir sus respectivos camiones personalizados desde la cuidad de NuevaYork, viajando alrededor de los Estados Unidos de América llevando diferentes tipos de carga y encargos hasta llegar a la primera parada en la ciudad de KeyWest en el estado de Florida.
+                    </p>
+                    <p>
+                      Este fue uno de las últimas adaptaciones de videojuegos del arcade lanzado en la consola Dreamcast después de que fuera descontinuada su producción y antes de que Sega se convirtiera en un desarrollador thirdparty.
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap text-center justify-evenly">
+                    <div class="">
+                      <h4>Estado:</h4>
+                      <hr>
+                      <div class="cursor-default relative"><img src="arcades_juegos/yoshiangry.gif" height="40px" alt="" class="red-filter absolute yoshi-estado yoshi-angry" draggable="false">EN MANTENIMIENTO</div>
+                      <!--<div class="flex"> 
+                        <img src="arcades_juegos/yoshiangry.gif" height="55px" alt="" class="red-filter absolute yoshi-estado" draggable="false">
+                        <img src="arcades_juegos/yoshihappy.gif" height="80px" alt="" draggable="false">
+                      </div>-->
+                    </div>
+                    <div>
+                      <h4>Records:</h4>
+                      <hr>
+                        <a class="pointer relative underline-grow" href="#">ENLACE EN AURCADE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-block flex-wrap justify-evenly hover-red-border relative pointer arcade-container-margin-padding brdr-rd-small overflow-hidden panel-arcade dark-blue-bg-op transitions-all-ease-0-3s">
+                <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim marg-bot-arcade-titulo arcade-titulo-font-size">Radikal Bikers</span></div>
+                <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
+                <div class="panel-col-1">
+                  <img src="arcades_juegos/radikalbikers_panel.webp" alt="" class="panel-img-ppal">
+                  <div class="sld-wrp hidden">
+                    <h4 class="text-center mage-font">Versiones Arcade y Pantallas</h4>
+                    <div class="slider-for">
+                      <div class="slide-container">
+                        <img class="slide-cointainer-img" src="arcades_juegos/radikalbikers/1.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/radikalbikers/2.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/radikalbikers/3.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/radikalbikers/4.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/radikalbikers/5.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="slider-nav">
+                      <img  class="slide-btn" src="arcades_juegos/radikalbikers/1.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/radikalbikers/2.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/radikalbikers/3.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/radikalbikers/4.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/radikalbikers/5.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-col-2 hidden flex flex-column justify-evenly">
+                  <div class="raleway-font">
+                    <h4 class="boing-anim-perma text-center mage-font">Radikal Bikers</h4>
+                    <p>
+                      Radikal Bikers es un juego de carreras desarrollado por la empresa Gaelco en 1998.
+
+                      Radikal Bikers está ambientado en un entorno mediterráneo y se basa en entregar una pizza en un scooter y en un tiempo en concreto.
+                    </p>
+                    <p>
+                      Tu oponente sera la maquina y mientras obtienes puntos. 
+
+                      La versión arcade tiene tres niveles de dificultad, que corresponden a cada uno de los diferentes lugares: Margherita ( facil ) ,Capricciosa ( medio ) y Diabola( dificil ). 
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap text-center justify-evenly">
+                    <div class="">
+                      <h4>Estado:</h4>
+                      <hr>
+                      <div class="shiny-hover cursor-default relative"><img src="arcades_juegos/yoshihappy.gif" class="absolute yoshi-estado" height="60px" alt="" draggable="false">EN FUNCIONAMIENTO</div>
+                      <!--<div class="flex"> 
+                        <img src="arcades_juegos/yoshiangry.gif" height="55px" alt="" class="red-filter" draggable="false">
+                        <img src="arcades_juegos/yoshihappy.gif" height="80px" alt="" draggable="false">
+                      </div>-->
+                    </div>
+                    <div>
+                      <h4>Records:</h4>
+                      <hr>
+                        <a class="pointer relative underline-grow" href="#">ENLACE EN AURCADE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-block flex-wrap justify-evenly hover-red-border relative pointer arcade-container-margin-padding brdr-rd-small overflow-hidden panel-arcade dark-blue-bg-op transitions-all-ease-0-3s">
+                <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim marg-bot-arcade-titulo arcade-titulo-font-size">Smashing Drive</span></div>
+                <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
+                <div class="panel-col-1">
+                  <img src="arcades_juegos/smashingdrive_panel.webp" alt="" class="panel-img-ppal">
+                  <div class="sld-wrp hidden">
+                    <h4 class="text-center mage-font">Versiones Arcade y Pantallas</h4>
+                    <div class="slider-for">
+                      <div class="slide-container">
+                        <img class="slide-cointainer-img" src="arcades_juegos/smashingdrive/1.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/smashingdrive/2.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/smashingdrive/3.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/smashingdrive/4.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="slider-nav">
+                      <img  class="slide-btn" src="arcades_juegos/smashingdrive/1.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/smashingdrive/2.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/smashingdrive/3.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/smashingdrive/4.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-col-2 hidden flex flex-column justify-evenly">
+                  <div class="raleway-font">
+                    <h4 class="boing-anim-perma text-center mage-font">Smashing Drive</h4>
+                    <p>
+                      Smashing Drive es un juego de carreras creado en Gaelco en 2001
+                    </p>
+                    <p>
+                      El jugador corre contra el tiempo y otro taxista psicótico por la cuidad de Nueva York. 
+
+El juego se divide en cuatro fases, cada una de las cuales contiene tres niveles diferentes 
+
+Si el jugador logra vencer al taxi rival en los tres niveles de dificultad, pasa a una etapa de bonificación en la que la única ruta disponible son todas las rutas arriesgadas. 
+                    </p>
+                    <p>Al final de una etapa, la puntuación del jugador se basa en la cantidad de tiempo que tardó en llegar al destino, el estado de la cabina, el rival derrotado, la cantidad de potenciadores Turbo obtenidos y la cantidad de rutas arriesgadas atravesadas. </p>
+                    <p>A diferencia de muchos juegos de carreras, la bocina en realidad tiene un uso funcional. Podemos coger objetos que se usan con el boton bocina</p>
+                  </div>
+                  <div class="flex flex-wrap text-center justify-evenly">
+                    <div class="">
+                      <h4>Estado:</h4>
+                      <hr>
+                      <div class="shiny-hover cursor-default relative"><img src="arcades_juegos/yoshihappy.gif" class="absolute yoshi-estado" height="60px" alt="" draggable="false">EN FUNCIONAMIENTO</div>
+                      <!--<div class="flex"> 
+                        <img src="arcades_juegos/yoshiangry.gif" height="55px" alt="" class="red-filter" draggable="false">
+                        <img src="arcades_juegos/yoshihappy.gif" height="80px" alt="" draggable="false">
+                      </div>-->
+                    </div>
+                    <div>
+                      <h4>Records:</h4>
+                      <hr>
+                        <a class="pointer relative underline-grow" href="#">ENLACE EN AURCADE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="inline-block flex-wrap justify-evenly hover-red-border relative pointer arcade-container-margin-padding brdr-rd-small overflow-hidden panel-arcade dark-blue-bg-op transitions-all-ease-0-3s">
+                <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim marg-bot-arcade-titulo arcade-titulo-font-size">Outrun 2</span></div>
+                <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
+                <div class="panel-col-1">
+                  <img src="arcades_juegos/outrun2_panel.webp" alt="" class="panel-img-ppal">
+                  <div class="sld-wrp hidden">
+                    <h4 class="text-center mage-font">Versiones Arcade y Pantallas</h4>
+                    <div class="slider-for">
+                      <div class="slide-container">
+                        <img class="slide-cointainer-img" src="arcades_juegos/outrun2/1.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun2/2.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun2/3.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun2/4.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun2/5.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/outrun2/6.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="slider-nav">
+                      <img  class="slide-btn" src="arcades_juegos/outrun2/1.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun2/2.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun2/3.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun2/4.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun2/5.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/outrun2/6.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-col-2 hidden flex flex-column justify-evenly">
+                  <div class="raleway-font">
+                    <h4 class="boing-anim-perma text-center mage-font">OutRun 2</h4>
+                    <p>
+                      Outrun2 y Outrun2 SP son un juego de carreras creado en 2003 y 2004 por Yu Suzuki y Sega-AM2.
+
+                      La idea es recorrer cinco etapas o quince en la version SP, antes de que se termine el tiempo,
+                      
+                      En estas versiones tenemos gran cantidad de coches para poder elegir y seguiremos
+                      
+                      acompañados por nuestra compañera rubia.
+                    </p>
+                    <p>
+                      Tenemos tres modos de juego, Modo Outrun, Modo Corazón y Time Attack.
+                    </p>
+                    <p>
+                      Para llegar a la meta hay que recorrer cinco etapas, al final de cada etapa el camino se divide en dos y se puede elegir la siguiente etapa entre dos posibles, El lado izquierdo es mas facil y cada vez que la terminas, el tiempo de juego aumenta.
+                    </p>
+                    <p>
+                      Existen gran variedad de finales, dependiendo de los circuitos que elijamos y los tiempos que consigamos.
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap text-center justify-evenly">
+                    <div class="">
+                      <h4>Estado:</h4>
+                      <hr>
+                      <div class="shiny-hover cursor-default relative"><img src="arcades_juegos/yoshihappy.gif" class="absolute yoshi-estado" height="60px" alt="" draggable="false">EN FUNCIONAMIENTO</div>
+                      <!--<div class="flex"> 
+                        <img src="arcades_juegos/yoshiangry.gif" height="55px" alt="" class="red-filter" draggable="false">
+                        <img src="arcades_juegos/yoshihappy.gif" height="80px" alt="" draggable="false">
+                      </div>-->
+                    </div>
+                    <div>
+                      <h4>Records:</h4>
+                      <hr>
+                        <a class="pointer relative underline-grow" href="#">ENLACE EN AURCADE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article>
+            <h2 class="sega-font red-text text-big-4 text-center">NUESTROS PINBALLS</h2>
+            <div class="flex flex-wrap margin-top-small justify-center">
+              <div class="inline-block flex-wrap justify-evenly hover-red-border relative pointer arcade-container-margin-padding brdr-rd-small overflow-hidden panel-arcade dark-blue-bg-op transitions-all-ease-0-3s">
+                <div class="absolute gradient-up flex align-end justify-center"><span class="boing-anim marg-bot-arcade-titulo arcade-titulo-font-size-2">Demolition Man</span></div>
+                <img height="25px" width="auto" class="absolute coin-anim" src="Coin.gif" alt="coin">
+                <div class="panel-col-1">
+                  <img src="arcades_juegos/demolitionmanpinball_panel.webp" alt="" class="panel-img-ppal">
+                  <div class="sld-wrp hidden">
+                    <h4 class="text-center mage-font">Versiones Pinball y Tablero</h4>
+                    <div class="slider-for">
+                      <div class="slide-container">
+                        <img class="slide-cointainer-img" src="arcades_juegos/demolitionmanpinball/1.webp" alt="">
+                      </div>
+                      <div class="slide-container">
+                        <img  class="slide-cointainer-img" src="arcades_juegos/demolitionmanpinball/2.webp" alt="">
+                      </div>
+                    </div>
+                    <div class="slider-nav">
+                      <img  class="slide-btn" src="arcades_juegos/demolitionmanpinball/1.webp" alt="">
+                      <img  class="slide-btn" src="arcades_juegos/demolitionmanpinball/2.webp" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-col-2 hidden flex flex-column justify-evenly">
+                  <div class="raleway-font">
+                    <h4 class="boing-anim-perma text-center mage-font">Demolition Man</h4>
+                    <p>
+                      Demolition Man es un pinball de Williams lanzado en febrero de 1994, que está basada en la pelicula del mismo nombre y es parte de la linea SuperPin de juegos de fuselaje ancho de WMS.
+                    </p>
+                    <p>
+                      Sylvester Stallone y Wesley Snipes prestaron sus voces para este juego durante las sesiones de ADR en Warner Brothers Studios en Los Ángeles bajo la dirección de Jon Hey. Hey compuso la música del juego de pinball en parte basándose en la banda sonora de la película.
+                    </p>
+                    <p>
+                      Además de los dos botones flipper estándar, el gabinete tiene un par de mangos de pistola que sobresalen hacia arriba por encima de ellos. Estos mangos tienen botones de activación que se pueden usar para controlar las aletas y un par de botones más pequeños para el pulgar que pueden otorgar bonificaciones en ciertas circunstancias cuando se presionan.
+                    </p>
+                    <p>
+                      Cuando este tiempo llega a 0, la partida acaba y un mapa describiendo las etapas recorridas aparece. 
+                      Si conseguimos finalizar la quinta etapa antes de que se acabe el tiempo, aparece un final, cada final 
+                      es diferente en función de cuál sea la última etapa, ya que hay 5 etapas posibles.
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap text-center justify-evenly">
+                    <div class="">
+                      <h4>Estado:</h4>
+                      <hr>
+                      <div class="shiny-hover cursor-default relative"><img src="arcades_juegos/yoshihappy.gif" class="absolute yoshi-estado" height="60px" alt="" draggable="false">EN FUNCIONAMIENTO</div>
+                      <!--<div class="flex"> 
+                        <img src="arcades_juegos/yoshiangry.gif" height="55px" alt="" class="red-filter" draggable="false">
+                        <img src="arcades_juegos/yoshihappy.gif" height="80px" alt="" draggable="false">
+                      </div>-->
+                    </div>
+                    <div>
+                      <h4>Records:</h4>
+                      <hr>
+                        <a class="pointer relative underline-grow" href="#">ENLACE EN AURCADE</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+      </section>
+    </main>
+  
+    <footer class="dark-blue-bg flex flex-column mage-font relative text-kinda-big">
+      <hr class="red-hr-footer">
+      <div class="flex justify-between footer-1">
+        <div class="flex-1 padding-lr-footer">
+          <img src="footerlogo.png" alt="Arcade Levels Logo" height="50px" class="margin-auto bot-margin">
+          <div class="flex flex-column align-center">
+            <div>Página web hecha por Mi Empresa SL.</div>
+            <div class="flex">
+              <div>Contacto: </div><a href="mailto:guillermobernallou@gmail.com">guillermobernallou@gmail.com</a>
+            </div>
+            <div>Redes:</div>
+          </div>
+          <div class="flex justify-evenly text-big-3">
+            <a href="#" target="_blank"><i class="fa-brands fa-github text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook text-black white-hover transitions-all-ease-0-2s"></i></a>
+          </div>
+        </div>
+        <div class="flex-1 padding-lr-footer ">
+          <h5 class="text-center text-kinda-big">Contacto</h5>
+          <div class="flex">
+            <i class="fa-solid fa-house text-black white-hover transitions-all-ease-0-2s margin-contacto-i"></i>
+            <a href="https://goo.gl/maps/jMw6Us4fk7sH8wWC8" target="_blank">Carretera Valencia KM 7.8 Nave 72A 50410 - Cuarte de Huerva - Zaragoza</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-phone text-black white-hover transitions-all-ease-0-2s margin-contacto-i"></i>
+            <a href="tel:+3466362429">+34 663 624 29</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-envelope text-black white-hover transitions-all-ease-0-2s margin-contacto-i"></i>
+            <a href="mailto:contacto@arcadelevels.com">contacto@arcadelevels.com</a>
+          </div>
+        </div>
+        <div class="text-center flex-1 padding-lr-footer bot-margin">
+          <h5 class="text-kinda-big">Horario de apertura/Opening hours</h5>
+          <div>Sábado/Saturday:</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+          <div>Domingo/Sunday</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+        </div>
+      </div>
+      <div class="flex flex-column medium-blue-bg footer-xtra relative">
+        <img src="footer-arcade.png" alt="Arcade 8bit" class="absolute footer-arcade" height="75px">
+        <hr class="footer-hr-2">
+        <div class="flex justify-evenly footer-xtra-margin">
+          <div>
+            Arcade Levels SL  -  CIF B99558611 
+          </div>
+          <div>Copyright © 2022 por Arcade Levels. Todos los derechos reservados</div>
+        </div>
+      </div>
+      <!---
+      <div class="absolute flex">
+        <img src="8bitPjs/spiderman.png" alt="Spiderman 8bit" draggable="false" class="pixel-art">
+      </div>-->
+    </footer>
+  
+    <script type="module" src="main.js"></script>
+    <script type="module" src="imports.js"></script>
+    <script type="module" src="contador.js"></script>
+    <script type="module" src="arcadesinfo.js"></script>
+  </body>
+</html>

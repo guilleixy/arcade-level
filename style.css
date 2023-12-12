@@ -1,0 +1,1763 @@
+
+
+@font-face {
+  font-family: 'SEGA';
+  font-style: normal;
+  font-weight: normal;
+  src: local('SEGA LOGO FONT'), url('fonts/SEGA.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Press Start';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Press Start 2P'), url('fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: '8bit Mage';
+  font-style: normal;
+  font-weight: normal;
+  src: local('DiaryOfAn8BitMage'), url('fonts/DiaryOfAn8BitMage-lYDD.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Mario Bros NES';
+  font-style: normal;
+  font-weight: normal;
+  src: local('super-mario-bros-nes'), url('fonts/super-mario-bros-nes.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pokemon GB';
+  font-style: normal;
+  font-weight: normal;
+  src: local('PokemonGb-RAeo'), url('fonts/PokemonGb-RAeo.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Zelda Ganon';
+  font-style: normal;
+  font-weight: normal;
+  src: local('ReturnOfGanonRegular-3ReM'), url('fonts/ReturnOfGanonRegular-3ReM.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cosmic Alien';
+  font-style: normal;
+  font-weight: normal;
+  src: local('CosmicAlien-V4Ax'), url('fonts/CosmicAlien-V4Ax.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Space Invaders';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Invaders-6RY1'), url('fonts/Invaders-6RY1.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Jumpman';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Jumpman'), url('fonts/Jumpman.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pacman';
+  font-style: normal;
+  font-weight: normal;
+  src: local('PacfontGood-yYye'), url('fonts/PacfontGood-yYye.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Gumball';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Gumball'), url('fonts/Gumball.ttf') format('truetype');
+}
+
+:root {
+  font-family: 'Press Start', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark; 
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --clr-txt-red: #fc0808;
+  --clr-drk-blue: #213547;
+  --clr-mid-blue: #32516d;
+  --clr-lght-blue: #446e93;
+  --clr-white: #e3e3e3;
+  --clr-black: black;
+
+  --header-height: 100px;
+  --footer-height: auto;
+  --main-padding: 5vw;
+}
+
+/* estilos para etiquetas en general */
+
+body{
+  overflow-x: hidden;
+}
+
+main{
+  padding: var(--main-padding);
+  padding-bottom: 2.8vw;
+  padding-top: 2.8vw;
+}
+
+header{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: var(--header-height);
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+footer{
+  height: var(--footer-height);
+  font-size: 10px;
+  padding-top:20px;
+  padding-bottom:20px;
+
+}
+
+section{
+  margin-bottom: 80px;
+}
+
+  /*font-family: Raleway , system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;*/
+
+/* estilos relacionados con los display */
+
+.hidden{
+  display: none !important;
+}
+
+.sticky{
+  position: sticky;
+}
+
+.fixed{
+  position: fixed;
+}
+
+.relative{
+  position: relative;
+}
+
+.absolute{
+  position:absolute;
+}
+
+.flex{
+  display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.align-even{
+  align-items: space-evenly;
+}
+
+.justify-evenly{
+  justify-content: space-evenly;
+}
+
+.justify-between{
+  justify-content: space-between;
+}
+
+.justify-around{
+  justify-content: space-around;
+}
+
+
+.align-center{
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align-end{
+  align-items: flex-end;
+}
+
+.align-start{
+  align-items: flex-start;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.top-left-0{
+  top:0;
+  left: 0;
+}
+
+.height-10{
+  height: 10%;
+}
+
+.height-30{
+  height: 30%;
+}
+
+.height-40{
+  height: 40%;
+}
+
+.height-25{
+  height: 25%;
+}
+
+.height-15{
+  height: 15%;
+}
+
+.height-100{
+  height: 100%;
+}
+
+.width-50{
+  width: 50%;
+}
+
+.width-100{
+  width: 100%;
+}
+
+.margin-auto{
+  margin: 0 auto;
+}
+
+.bot-margin{
+  margin-bottom: 15px;
+}
+
+.max-height{
+  max-height: 100%;
+  width: auto;
+}
+
+.max-width{
+  max-width: 100%;
+  height: auto;
+}
+
+.max-all{ /* ¿?  */
+  width: 100%;
+  max-height: 100%;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.flex-1{
+  flex: 1;
+}
+
+.width-100{
+  width: 100%;
+}
+
+.hr-vertical{
+  height: 60px;
+  width: 2px; 
+  background-color: var(--clr-white);
+}
+
+.red-hr-footer{
+  width: 80%;
+  border-color: var(--clr-txt-red);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-border-bg{
+  border: none;
+  background: none;
+}
+
+/* paddings y margins */
+
+.padding-1{
+  padding: 20px
+}
+
+.padding-2{
+  padding: 5px;
+}
+
+.padding-3{
+  padding: 10px;
+}
+
+.padding-li-nav{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.padding-login-nav{
+  margin: 15px;
+}
+
+.padding-extra-top{
+  padding-top: 40px;
+}
+
+.lr-no-padding{
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.padding-lr-footer{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.margin-contacto-i{
+  margin-right: 30px;
+  margin-top: 3px;
+}
+
+.footer-xtra-margin{
+  margin: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.footer-xtra{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.footer-1{
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 20px;
+}
+
+.footer-hr-2{
+  margin-top: 20px;
+}
+
+.margin-3{
+  margin: 10px;
+}
+
+.padding-horarios-hero{
+  padding:80px;
+}
+
+.margin-top-small{
+  margin-top: 10px;
+}
+
+.margin-bottom-1{
+  margin-bottom: 2.8vw;
+}
+
+#destroyer-wrapper{
+  height: 700px;
+  width: 100%;
+  background-color: black;
+}
+
+#destroyer-nave {
+  transition: top 0.25s ease-out;
+}
+#destroyer-wrapper.hide-cursor {
+  cursor: none;
+}
+
+.nave-bg{
+  background-image: url('horarios/nave3On.png');
+  background-size: cover;
+}
+
+#bala-small{
+  transition: opacity 0.25s ease-out;
+  opacity: 0;
+  left: 0;
+}
+
+#bala-espacio{
+  transition: opacity 0.25s ease-out;
+  transition: left 1s ease-out;
+  opacity: 0;
+}
+
+#nave-img{
+  transition: opacity 0.5s ease-out;
+}
+
+#crosshair{
+  opacity: 0;
+  transition: all 0.4s ease-out;
+  height: 50px;
+  width: 50px;
+  background-image: url(horarios/crosshair.png);
+  background-size: cover;
+  z-index: 3;
+}
+
+.asteroide-blur{
+  height: 80%;
+  width: 80%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  z-index: 1;
+  position: absolute;
+  filter: blur(70px);
+  opacity: 0.8;
+  transition: filter 0.1s ease-out;
+}
+
+.rotate-anim{
+  animation: rotate 20s infinite;
+}
+
+.asteroide-blur-tierra{
+  background: linear-gradient(
+    to right, aquamarine, mediumpurple);
+    /*background-image: url(horarios/1.jpg);
+    background-size: cover;*/
+}
+
+.asteroide-blur-asteroide{
+  background: linear-gradient(
+    to right, #739dc3, #547390);
+}
+
+.asteroide-blur-mercurio{
+  background: linear-gradient(
+    to right, #f7c965, #e34c15);
+}
+
+@keyframes rotate{
+  from {
+    rotate:0deg;
+  }
+  50%{
+    scale: 1 1.5;
+  }
+  to {
+    rotate:360deg;
+  }
+}
+
+.expand-anim{
+  animation: 0.7s expand forwards linear;
+  opacity: 0.06;
+}
+
+@keyframes expand{
+  from{
+    height: 80%;
+    width: 80%;
+  }
+  to{
+    height: 2000%;
+    width: 2200%;
+  }
+}
+
+.space-bg{
+  background-image: url(horarios/fondo.jpg);
+  background-size: cover;
+}
+
+.asteroid-bg{
+  background-image: url(horarios/asteroide.png);
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+  top: 200px;
+  left: 25%;
+}
+
+.tierra-bg{
+  background-image: url(horarios/tierra.png);
+  background-size: cover;
+  height: 175px;
+  width: 175px;
+  top: 25px;
+  left: 45%;
+}
+
+.mercurio-bg{
+  background-image: url(horarios/mercurio.png);
+  background-size: cover;
+  height: 175px;
+  width: 175px;
+  top: 340px;
+  left: 65%;
+}
+
+.pluton-bg{
+  background-image: url(horarios/pluton.png);
+  background-size: cover;
+  height: 155px;
+  width: 155px;
+  top: 500px;
+  left: 85%;
+}
+
+.key{
+  transition: all 2s ease-out;
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.deriva-anim{
+  animation: 1s deriva linear infinite;
+}
+
+.fade-out-anim{
+  animation: 5s fade-out linear forwards;
+}
+
+@keyframes fade-out{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+.fade-in-anim{
+  animation: 5s fade-in linear forwards;
+}
+
+@keyframes fade-in{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes deriva {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.no-select {
+  user-select: none;
+}
+
+/* estilos relacionados con las listas y los nav */
+.ls-none{
+  list-style: none;
+  padding-left: 0;
+}
+
+.padidng-margin-0{
+  margin: 0;
+  padding: 0;
+}
+
+.yoshi-peeking{
+  bottom: 0;
+  left: 0;
+}
+
+.coin-peeking{
+  bottom: 10;
+  left: 30px;
+  opacity: 0;
+}
+
+.coin-peeking-animation{
+  animation: 0.5s coin-nav-anim;
+}
+
+
+.link-peeking{
+  left: -30px;
+  bottom:-85px;
+  z-index: 3;
+}
+
+.pixel-art{
+  image-rendering: pixelated;
+}
+
+/* estilos relacionados con los bordes */
+.brdr-rd{
+  border-radius: 0.5em;
+}
+
+.brdr-rd-small{
+  border-radius: 0.2em;
+}
+
+.brdr-rd-small-2{
+  border-radius: 0.1em;
+}
+
+.brdr-rd-bottom{
+  border-radius: 0 0 50px 50px;
+}
+
+.brdr-rd-bottom-2{
+  border-radius: 0 0 15px 15px;
+}
+
+.brdr-red{
+  border-color: var(--clr-txt-red);
+}
+
+.border{
+  border-style: solid;
+}
+
+.brdr-red-black{
+  border: 2px solid var(--clr-black);
+  box-shadow: 0 0 0 2.5px var(--clr-txt-red),
+  0 0 20px  6px var(--clr-lght-blue);
+}
+
+.brdr-black{
+  border: 3px solid black;
+}
+
+.overflow-hidden{
+  overflow: hidden;
+}
+
+.brdr-black-blue {
+  border-top: 20px solid #001317;
+  border-bottom: 20px solid #001317;
+}
+
+.brdr-black-tb{
+  border-top: 20px solid black;
+  border-bottom: 20px solid black;
+}
+
+.brdr-yellow-lr{
+  border-left: 15px solid #faa917;
+  border-right: 15px solid #faa917;
+}
+
+.brdr-blue-lr{
+  border-left: 15px solid #005464;
+  border-right: 15px solid #005464;
+}
+
+.brdr-red-lr{
+  border-left: 15px solid #fa5354;
+  border-right: 15px solid #fa5354;
+}
+
+.brder-lr-grey{
+  border-left: 3px solid grey;
+  border-right: 3px solid grey;
+}
+
+.brdr-white-lr{
+  border-left: 15px solid #fbeed8;
+  border-right: 15px solid #fbeed8;
+}
+
+.brdr-orange-lr{
+  border-left: 15px solid #d0662e;
+  border-right: 15px solid #d0662e;
+}
+
+.brdr-rd-50{
+  border-radius: 50%;
+}
+
+.neon-border{
+  border: 3px solid #0cd808;
+  box-shadow: 0 0 1px #b3ff51, 0 0 2px #b3ff51, 0 0 6px #b3ff51, 0 0 12px #b3ff51, inset 0 0 1px #b3ff51, inset 0 0 2px #b3ff51, inset 0 0 6px #b3ff51, inset 0 0 12px #b3ff51;
+}
+
+.buses-download{
+  border: 3px black solid;
+}
+
+.buses-download:hover{
+  background-color: var(--clr-white);
+  color: black;
+}
+
+.white-hover:hover{
+  color: var(--clr-white);
+}
+
+.dotted-border-left{
+  border-right: dotted #aca9a9;
+}
+
+.small-shadow{
+  box-shadow: 0 0 20px var(--clr-lght-blue);
+}
+
+.small-shadow-3{
+  box-shadow: 0 0 20px #FF19DC;
+}
+
+.small-shadow-2{
+  box-shadow: 0 0 20px #FFA619;
+}
+
+.small-shadow-4{
+  box-shadow: 0 0 20px #47FF0D;
+}
+
+.hover-light:hover{
+  box-shadow: 0 0 20px var(--clr-lght-blue);
+}
+
+.red-border{
+  outline-offset: 4px;
+  outline: 6px solid var(--clr-txt-red);
+  border-radius: 5px;
+}
+
+/* estilos que se añaden con javascript */
+
+.opacity-05{
+  opacity: 0.5;
+}
+
+.arrow-button{
+  height: 25px;
+  top: 50%;
+}
+
+.arrow-button:hover{
+  opacity: 0.8;
+}
+
+.button-arrow-left{
+  left: -30px;
+}
+
+.button-arrow-right{
+  right: -30px;
+}
+
+/* estilos relacionados con el texto */
+
+.red-text{
+  color: var(--clr-txt-red);
+}
+
+.white-text{
+  color: white;
+}
+
+.sega-font{
+  font-family: 'SEGA', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.pokemon-font{
+  font-family: 'Pokemon GB', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.mario-font{
+  font-family: 'Mario Bros NES', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.zelda-font{
+  font-family: 'Zelda Ganon', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.cosmic-font{
+  font-family: 'Cosmic Alien', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.invaders-font{
+  font-family: 'Space Invaders', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.dk-font{
+  font-family: 'Jumpman', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.pacman-font{
+  font-family: 'Pacman', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.raleway-font{
+  font-family: Raleway , system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+.text-center{
+  text-align: center;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.letter-spacing-1{
+  letter-spacing: 0.2em;
+}
+
+.letter-spacing-2{
+  letter-spacing: 0.1em;
+}
+
+.letter-spacing-big{
+  letter-spacing: 1em;
+}
+
+.text-big-1{
+  font-size: 1.2em;
+}
+
+.text-big-2{
+  font-size: 1.7em;
+}
+
+.text-big-3{
+  font-size: 2.2em;
+}
+
+.text-big-4{
+  font-size: 3.2em;
+}
+
+.text-kinda-big{
+  font-size: 1em;
+}
+
+.nav-text-size{
+  font-size: 0.75em;
+}
+
+.text-kinda-normal{
+  font-size: 0.88em;
+}
+
+.text-small-1{
+  font-size: 0.8em;
+}
+
+.mage-font{
+  font-family: '8bit Mage', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.gumball-font{
+  font-family: 'Gumball', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+
+.text-black{
+  color: black;
+}
+
+/* colores de fondo */
+
+.dark-blue-bg{
+  background-color: var(--clr-drk-blue);
+}
+
+.dark-blue-bg-op{
+  background-color: #21354782;
+}
+
+.medium-blue-bg{
+  background-color: var(--clr-mid-blue);
+}
+
+.light-blue-bg{
+  background-color: var(--clr-lght-blue);
+}
+
+.white-bg{
+  background-color: var(--clr-white);
+}
+
+.light-blue-bg{
+  background-color: #56b0c8;
+}
+
+.black-bg{
+  background-color: black;
+}
+
+.space-dark-blue-bg{
+  background-color: #2a44b8;
+}
+
+.yellow-bg{
+  background-color: #feff01;
+}
+
+.carr-horarios-bg{
+  background-image: url(horarios/1.jpg);
+  background-size: cover;
+}
+
+.red-trans-bg{
+  background-color: #d80d0d86;
+}
+
+.red-bg{
+  background-color: var(--clr-txt-red);
+}
+
+.green-bg{
+  background-color: #113502;
+}
+
+.pokemon-frame-bg{
+  background-image: url(horarios/pokemonframe.png);
+  background-size: cover;
+}
+
+.grey-bg{
+  background-color: #4a4a4a;
+}
+
+.grey-bg-semitrans{
+  background-color: #272727ba;
+}
+
+/* estilos específicos */
+
+.horarios-hero-circ{
+  height: 170px;
+  width: 170px;
+}
+
+.pointer:hover{
+  cursor: pointer;
+}
+
+.cursor-interr:hover{
+  cursor: help;
+}
+
+.h2-carr{
+  position: relative;
+  height: 400px;
+}
+
+.h2-carr h2{
+  z-index: 1;
+  font-size: 4em;
+}
+
+.h2-carr::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%; 
+  height: 100%;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); 
+  z-index: -1;
+  border-radius: 0.5em;
+}
+
+
+.carr-img{
+  height: 100%;
+  width: 100%;
+  top:0;
+  left: 0;
+  position: absolute;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-image: url(/arcades_galeria/1.webp);
+  filter: blur(1px); 
+  mix-blend-mode:normal;
+  transition: opacity 0.5s; 
+}
+
+.coin-anim{
+  bottom: -50px;
+  left: 10px;
+  z-index:5;
+}
+
+.boing-anim-perma{
+  animation: floating-animation 0.8s ease-in-out infinite alternate; 
+}
+
+.car-bg{
+  /*background-image: url(tarifas/fondo2.gif);
+  background-size: cover;*/
+  background-image: url(tarifas/collagearcadebg.jpg);
+  background-size: cover;
+  z-index: 0;
+  
+}
+
+#pop-up{
+  position: absolute;
+  height: 100vh;
+  overflow-y: hidden;
+  width: 100%;
+  background-color: #00000069;
+  z-index: 10;
+  transition: all 0.3s ease-in;
+  display: none;
+}
+
+#fondo-tarifas{
+  top: 0;
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  background-color: var(--clr-black);
+  opacity: 0.7;
+  z-index: -1;
+  filter: grayscale(100%);
+}
+
+.pacman-gif{
+  height: 15px;
+  width: auto;
+}
+
+.ghost-gif{
+  height: 15px;
+  width: auto;
+}
+
+.header-img{
+  height: 45px;
+  width: auto;
+}
+
+.header-effect{
+  height: 100%;
+  background-color: var(--clr-lght-blue);
+  width: 150px;
+  z-index: 0;
+  /* filter: blur(10px) brightness(100%); */
+  left: 0;
+  opacity: 0;
+  background: rgb(2,0,36);
+  /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%); */
+  /* https://cssgradient.io/ */
+}
+
+.header-effect-brdrd{
+  border-radius: 0 10px 10px 0;
+}
+
+.header-effect-anim{
+  animation: header-effect-fium 0.2s linear; 
+  /* 0.2 no se ve a sonic un carajo */
+}
+
+.header-effect-anim-2{
+  animation: header-effect-fium-2 1.5s linear;
+}
+
+@keyframes header-effect-fium-2 {
+  0%{
+    left: -20%;
+    opacity: 0.8;
+  }
+  40%{
+    /* width: 150px;
+    left: 50%; */
+    /* filter:brightness(220%); */
+    opacity: 1;
+  }
+  100%{
+    left: 120%;
+    opacity: 0.8;
+  }
+}
+
+
+/* .header-effect-anim-reverse{
+  animation: header-effect-fium-reverse 0.4s linear;
+} */
+
+@keyframes header-effect-fium {
+  0%{
+    width: 250px;
+    left: -20%;
+    opacity: 0.8;
+    filter: blur(10px) brightness(100%);
+  }
+  40%{
+    /* width: 150px;
+    left: 50%; */
+    filter: blur(1px) brightness(220%);
+    opacity: 1;
+  }
+  100%{
+    width: 250px;
+    left: 120%;
+    filter: blur(10px) brightness(100%);
+    opacity: 0.8;
+  }
+}
+
+/* @keyframes header-effect-fium-reverse {
+  0% {
+    width: 150px;
+    left: 120%;
+    opacity: 0;
+    filter: blur(10px) brightness(100%);
+  }
+  50% {
+    width: 50px;
+    left: 50%;
+    filter: blur(5px) brightness(150%);
+    opacity: 1;
+  }
+  100% {
+    width: 150px;
+    left: -20%;
+    filter: blur(0px) brightness(100%);
+    opacity: 0;
+  }
+} */
+
+.bolita{
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color:black;
+  margin:1px;
+}
+
+.nav-logo-wrapper{
+  height: 55px;
+  width: 225px;
+}
+
+.logo-1{
+  height: 60%;
+  font-size: 20px;
+}
+
+.red-hover:hover{
+  color: var(--clr-txt-red);
+}
+
+.mario-link{
+  bottom: -100px;
+  height: 20px;
+  width: auto;
+}
+
+.dk-underline-perm{
+  background-image: url(dk_underline.png);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  background-size: auto 6px; 
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dk-underline{
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dk-underline:hover{
+  background-image: url(dk_underline.png);
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  background-size: auto 6px; 
+}
+
+.brick-wrapper:hover .brick-bounce{
+  animation: 0.5s bounce;
+}
+
+.brick-wrapper:hover .mario-link{
+  animation: 0.5s jump;
+}
+
+.coin-nav{
+  left: 13px;
+  top:-3px;
+  opacity: 0;
+}
+
+.brick-wrapper:hover .coin-nav{
+  animation: 0.5s coin-nav-anim 0.3s;
+}
+
+.bg-adultos{
+  background-image: url(tarifas/adultos/1.webp);
+  background-size: cover;
+}
+
+.bg-infantil{
+  background-image: url(tarifas/infantil/1.webp);
+  background-size: cover;
+}
+
+#coin-counter-wrapper{
+  top: var(--header-height);
+  font-family: 'Mario Bros NES', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #181717;
+  z-index: 5;
+}
+
+.counter-coin.animate{
+  animation: 0.7s coin-counter-anim;
+} 
+
+.arcade-dim{
+  height: 700px;
+  width: 314px;
+}
+
+.arcade-margins{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.container-provisional-dim-2{
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 60%;
+}
+
+.size-provisional{
+  height: 30px;
+  width: 40px;
+}
+
+.sld-wrp {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.slider-for {
+  width: 400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.slide-container {
+  height: 400px;
+  width: 100%;
+}
+
+.slide-cointainer-img{
+  max-height: 100% !important;
+  width: auto !important;
+}
+
+.slide-btn {
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.slide-btn:hover {
+  background-color: rgb(255, 179, 0);
+}
+
+.footer-arcade{
+  bottom: -1px;
+  left: 1px;
+}
+
+/* estilos de los paneles de juegos */
+
+.gradient-up{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); 
+  height: calc(100% - 5px);
+  width: calc(100%-5px);
+  z-index: 3;
+  opacity: 0;
+  top: 200px;
+  transition: all 0.2s ease-in-out;
+  top: 5px;
+  right:5px;
+  left: 5px;
+  bottom: 5px;
+}
+
+
+.hover-red-border:hover .gradient-up{
+  top: 0;
+  opacity: 1;
+}
+
+.arcade-container-margin-padding{ /* hace de width del borde rojo */
+  padding: 5px; 
+  margin: 5px;
+}
+
+.hover-red-border:hover::before{
+  transform-origin: right;
+  animation: reveal-gradient 0.2s ease-in-out forwards;
+}
+
+.hover-red-border:not(:hover)::before{
+  animation: reveal-gradient-reverse 0.2s ease-in-out;
+}
+
+.hover-red-border:hover .boing-anim{
+  animation: floating-animation 0.7s ease-in-out infinite alternate;
+}
+
+.fake-panel-arcade-dim{
+  width: 300px;
+  height: 150px;
+}
+
+.panel-arcade-dim{
+  width: 100%;
+  height: 60%; 
+}
+
+.hover-red-border{
+  background-color: #00000000;
+  transition: width 0.5s ease, height 0.5s ease;
+}
+
+.hover-red-border::before{
+  content: "";
+  position: absolute;
+  background-color: var(--clr-txt-red);
+  height: 0%;
+  width: 0%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.coin-anim{
+  bottom: -50px;
+  left: 10px;
+  z-index:5;
+}
+
+.hover-red-border:hover .coin-anim{
+  animation: coin-animation 0.6s ease-in;
+}
+
+.yoshi-estado{
+  top: -60px;
+  left: 230px;
+}
+
+.yoshi-angry{
+  top: -42px;
+}
+
+.marg-bot-arcade-titulo{
+  margin-bottom: 3px;
+}
+
+.arcade-titulo-font-size{
+  font-size: 20px;
+}
+
+.arcade-titulo-font-size-2{
+  font-size: 10px;
+}
+
+.panel-col-2{
+  width: 650px;
+}
+
+.underline-grow::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -3px;
+  left: -1px;
+  background-color: blue;
+  transition: width 0.2s ease-in-out;
+}
+
+.underline-grow:hover::before {
+  width: 100%;
+  animation: gradient-animation 5.5s infinite 0.3s;
+}
+
+.shiny-hover:hover{
+  background-image: url(arcades_juegos/shiny.gif);
+  background-repeat: repeat-x;
+  background-size: 25%;
+}
+
+.question-coin-hover{
+  padding: 10px;
+  right: -580px;
+  top:-9px;
+  opacity: 0;
+}
+
+.scale-1{
+  transform: scale(0.7);
+}
+
+
+/* */
+#map { 
+  height: 600px; 
+  width: 100%;
+}
+
+.z-index-9{
+  z-index: 9;
+}
+
+.mapa-over-pos{
+  bottom: calc(50% - 190px);
+  left: 70px;
+  z-index: 999;
+  width: 350px;
+}
+
+.z-index-2{
+  z-index: 3;
+}
+
+.z-index-3{
+  z-index: 0;
+}
+
+.filter-black{
+  filter: brightness(0);
+  z-index: 0;
+  bottom: 0;
+}
+
+.eventos-bg{
+  height: 250px;
+  width: 250px;
+  transition: all 0.2s ease-in-out;
+}
+
+.eventos-bg:hover{
+  transform: scale(110%);
+  border-radius: 0;
+}
+
+.eventos-bg:hover .filter-black{
+  filter: brightness(1);
+ /* filter: grayscale(0.5);*/
+}
+
+.static_gif{
+  opacity: 1;
+}
+
+.animated_gif{
+  opacity: 0;
+}
+.eventos-bg:hover .static_gif {
+  opacity: 0;
+}
+
+.eventos-bg:hover .animated_gif {
+  opacity: 1;
+}
+@keyframes gradient-animation {
+  0% {
+    background-color: blue;
+  }
+  20% {
+    background-color: green;
+  }
+  40% {
+    background-color: yellow;
+  }
+  60% {
+    background-color: orange;
+  }
+  80% {
+    background-color: red;
+  }
+  100% {
+    background-color: blue;
+  }
+}
+
+.cursor-default:hover{
+  cursor: default;
+}
+
+.red-filter {
+  filter:  hue-rotate(245deg) saturate(260%);
+}
+
+.nav-burger-button{
+  background-color: rgba(0, 0, 0, 0.295);
+  border: black solid 1px;
+  border-radius: 50%;
+  padding: 6px 8px;
+}
+
+
+/* estilos de transiciones */
+
+.transitions-all-ease-0-3s{
+  transition: 0.3s all ease-in-out;
+}
+
+.transitions-all-ease-0-2s{
+  transition: 0.2s all ease-in-out;
+}
+
+/* estilos de las arcades de tarifas */
+
+#joystick{
+  top: -25px;
+  left: 33px;
+}
+
+@keyframes coin-counter-anim{
+  0%{
+    transform: translateY(0px);
+  }
+  25%{
+    transform: translateY(-4px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+  75%{
+    transform: translateY(-1.5px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes coin-nav-anim{
+  0%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-11px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+  110%{
+    opacity: 0;
+  }
+}
+
+@keyframes jump{
+  0%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-98px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bounce{
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+@keyframes coin-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floating-animation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes reveal-gradient-reverse {
+  0% {
+    height: 100%;
+    width: 100%;
+  }
+  25% {
+    height: 75%;
+    width: 75%;
+  }
+  50% {
+    width: 50%;
+    height: 50%;
+  }
+  75% {
+    width: 25%;
+    height: 25%;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes reveal-gradient {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  25% {
+    width: 25%;
+    height: 25%;
+  }
+  50% {
+    width: 50%;
+    height: 50%;
+  }
+  75% {
+    height: 75%;
+    width: 75%;
+  }
+  100% {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.computer-hidden{
+  display: none;
+}
+
+.nav-bg-mobile{
+  background-image: url(mobile-bg-1.gif);
+  background-size: cover;
+  width: 100%;
+  height: 100dvh;
+  z-index: 4;
+}
+
+/* código para hacer la página responsiva */
+
+@media(max-width:1355px){
+
+}
+@media(max-width:750px){ /* esta el problema del padding de la scrollbar para el menu del nav*/
+  body{ /* mirar si hace falta esta instruccion */
+    overflow-x: hidden;
+    width: 100vw !important;
+  }
+  .joystick-wrapper{ /* se pueden quitar y poner mobile hidden, depende de con que width quieras quitar las arcades */
+    display: none;
+  }
+  .pantalla-arcade{
+    display: none;
+  }
+  .arcade-dim{
+    height: auto;
+    border: none !important;
+    background: none;
+  }
+  .mobile-hidden{
+    display: none /* quizas poner esto para width mas alta*/;
+  }
+  .mapa-over-pos{
+    position: static;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .brdr-black-tb{
+    border: none !important;
+    margin-top: 10px;
+  }
+  nav{
+    flex-direction: column;
+  }
+  .nav-list{
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -100%;
+    transition: all 0.3s ease-in;
+    font-size: inherit;
+  } 
+  header{
+    flex-direction: column;
+    z-index: 5;
+  }
+  .computer-hidden{
+    display: flex;
+  }
+  .text-big-4{
+    font-size: 1.8rem;
+  }
+  .padding-li-nav{
+    padding: 10px;
+  }
+  .h2-carr{
+    border: none;
+    display: inline-block;
+  }
+  .h2-carr::before{
+    background: none;
+  }
+}
+/*
+@media (prefers-color-scheme: light) { /* hay que arreglar el color del nav para modo light 
+  :root {
+    color: #213547;
+    background-color: var(--clr-white);
+  }
+  .h2-carr::before {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); 
+  }
+} 
+*/

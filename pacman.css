@@ -1,0 +1,295 @@
+.marg-top-provisional{
+    margin-top: 75px;
+}
+
+canvas{
+    background-color: black;
+    border: 40px solid black;
+}
+
+.pacman-wrapper{
+    background-color: #ffd000;
+    padding: 20px;
+    width: 100%;
+}
+
+#pacman-dialog, #pacman-restart-dialog {
+    /* left: 40px; */
+    /* background-image: url(horarios/trampita.png); */
+    background-size: cover;
+    /* margin-left: var(--main-padding);
+    width: 760px;
+    height: 920px;
+    margin-top: 40px; */
+    /* width: 100%; */
+    height: 100%;
+}
+
+dialog{
+    /* width: 100%; */
+    height: 100%;
+    border: #070724;
+}
+
+#countdown-el{
+    background-color: rgba(0, 0, 0, 0.831);
+
+    background-size: cover;
+    /* margin-left: var(--main-padding);
+    width: 760px;
+    height: 920px;
+    margin-top: 40px;
+    left: 40px; */
+    width: 100%;
+    height: 100%;
+}
+#victory-dialog{
+    background-color: rgba(0, 0, 0, 0.831);
+    background-size: cover;
+    /* margin-left: var(--main-padding);
+    width: 760px;
+    height: 920px;
+    margin-top: 40px;
+    left: 40px; */
+    /* width: 100%; */
+    height: 100%;
+}
+
+.highscores-bg{
+    background-color: #070724;
+}
+
+.blue-bg-pc{
+    background-color: #070724;
+}
+
+.highscores-padding{
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.espasio{
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.highscores-wrapper{
+    z-index: 2;
+}
+
+.highscores-wrapper > h5{
+    font-size: 10px;
+}
+
+.highscores-wrapper > h4{
+    font-size: 30px;
+}
+
+.margin-tb-1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#highscores-ol{
+    padding-left: 0px;
+    padding-right: 0px;
+    
+}
+
+#highscores-ol > li{
+    font-size: 10px;
+}
+
+.controles-wrapper{
+    margin-left:40px;
+    margin-right:40px;
+}
+
+.arrow-img{
+    margin: 10px;
+}
+
+.pacman-info{
+    padding: 10px;
+}
+
+.margin-top-h2{
+    margin-top: -20px;
+}
+
+.pacman-pixel{
+    bottom:-20px;
+    left: 0;
+}
+
+.dialogue-pixel{
+    bottom:140px;
+    left: 50px;
+    height: 78px;
+}
+
+.flex-shrink{
+    flex-shrink:0;
+}
+
+#player-name{
+    font-size: 10px;
+    background-color: #242424;
+    border: 2px solid black;
+    border-radius: 3px;
+    color: #bcbcbc;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 300px;
+    overflow: hidden;
+}
+
+.advice-bubble{
+    bottom: 100px;
+    left: 140px;
+    opacity: 0;
+    display: hidden;
+    transition: all ease-in 0.3s;
+}
+
+.advice-bubble > img{
+    height: 10px;
+    transition: all ease-in 0.3s;
+}
+
+.advice-bubble > figcaption{
+    font-size: 8px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.shrink-dialogue{
+    transition: all ease-out 0.3s;
+    opacity: 0 !important;
+    height: 10px !important;
+
+}
+
+.scanner-line{
+    width: 100%;
+    background-color: red;
+    height: 7px;
+    border-radius: 2px;
+}
+
+.scanner-light{
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    border-radius:50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(2px);
+    animation: flare-eff-2 1s linear infinite;
+}
+
+#flare{
+    top: 3.5px;
+    transition: all 1s ease-in;
+}
+
+
+.scanner-light-blur{
+    background-color: red;
+    height: 45px;
+    width: 45px;
+    border-radius:50%;
+    filter: blur(10px) brightness(120%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: flare-eff-1 1s linear infinite;
+    /* clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    opacity: 0.7; */
+}
+
+
+.scanner-sparks{
+    z-index: 10;
+    filter: blur(1.5px);
+}
+
+.hws{
+    height: 50px;
+    width: 50px;
+    top: -25px;
+    left: -25px;
+}
+
+@keyframes flare-eff-1 {
+    0%{
+        filter: blur(10px) brightness(120%);
+    }
+    50%{
+        filter: blur(15px) brightness(120%);
+    }
+    100%{
+        filter: blur(10px) brightness(80%);
+    }
+}
+
+@keyframes flare-eff-2 {
+    0%{
+        filter: blur(2px);
+    }
+    50%{
+        filter: blur(3px);
+    }
+    100%{
+        filter: blur(2px);
+    }
+}
+
+#scanner{
+    width: 100%;
+    top: 0;
+}
+
+.scanner-blur{
+    height: 40px;
+    filter: blur(40px);
+    /* background-color:#ffd000; */
+}
+
+.scanner-blur-2{
+    height: 20px;
+    filter: blur(10px);
+}
+
+.scanner-animation{
+    /* animation: scanner-anim 5s linear infinite; */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes scanner-anim{
+    0%{
+        top: 0%;
+    }
+    50%{
+        top: 100%
+    }
+    100%{
+        top:0%;
+    }
+}
+
+.marios-wrapper{
+    height: 350px;
+    width: 233.66px;
+}

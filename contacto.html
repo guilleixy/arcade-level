@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpeg" href="/icon.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARCADE LEVELS</title>
+    <script src="https://kit.fontawesome.com/b13fab0a20.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  </head>
+  <body>
+    <div id="pop-up" class="flex align-center justify-center">
+      <div class="flex flex-column white-bg text-black brdr-red-black padding-1 text-kinda-normal ">
+        <h5 class="text-center">¡Hola!</h5>
+        <p>Esta página está aún en construcción</p>
+        <p>De momento, están disponibles las páginas de </p>
+        <ul class="padding-2">
+          <li>Nuestros juegos</li>
+          <li>Tarifas</li>
+          <li>Horarios</li>
+        </ul>
+        <p>Prácticamente toda la página es interactiva.</p>
+        <p>¡Pasa el ratón o clickea para descubrir todos los Easter Eggs!</p>
+        <button onclick="cerrarTab()" class="pointer">Cerrar</button>
+      </div>
+    </div>
+    <script>
+      // Verificar si el pop-up ya se ha mostrado antes
+      if (!sessionStorage.getItem('popupShown')) {
+        mostrarPopUp();
+      }
+
+      function mostrarPopUp() {
+        document.getElementById('pop-up').style.opacity = '1';
+        document.getElementById('pop-up').style.display = 'flex';
+        document.body.style.overflow = "hidden";
+
+        // Guardar información en sessionStorage indicando que el pop-up ya se mostró
+        sessionStorage.setItem('popupShown', 'true');
+      }
+
+      function cerrarTab() {
+        document.getElementById('pop-up').style.opacity = '0';
+        setTimeout(() => {
+          document.getElementById('pop-up').style.display = 'none';
+        }, 300);
+        document.body.style.overflow = "visible";
+      }
+    </script>
+    <header class="flex align-center dark-blue-bg justify-center relative">
+     
+      <div class=" white-bg brdr-red-black brdr-rd-small pointer flex align-center justify-center nav-logo-wrapper">
+        <div>
+          <h1 class="sega-font text-center red-text logo-1">ARCADE LEVELS</h1>
+          <div class="flex header-pacman-wrapper">
+            <img class="pacman-gif" src="pacman.gif" alt="pacman">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+            <div class="flex align-center">
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+              <div class="bolita"></div>
+            </div>
+            <img  class="ghost-gif" src="ghost.gif" alt="pacman-ghost">
+          </div>
+        </div>
+        <img class="header-img" src="logo-arcade.png" alt="logo-arcade">
+      </div>
+      
+      <nav class="flex">
+          <ul class="ls-none flex align-center justify-center nav-text-size text-center mage-font">
+              <button class="padding-login-nav flex align-center justify-center pointer hover-light"><i class="fa-solid fa-circle-user"></i> Iniciar Sesión</button>
+              <li class="padding-li-nav"><a class="dk-underline" href="horarios.html">Horarios</a></li>
+              <li  class="padding-li-nav"><a class="dk-underline" href="tarifas.html">Tarifas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="galeria.html">Galería imágenes</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="index.html">Nuestros juegos</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="reservas.html">Reservas</a></li>
+              <li class="padding-li-nav"><a class="dk-underline" href="compraventa.html">CompraVenta y Reparaciones</a></li>
+              <li class="padding-li-nav"><a class="dk-underline-perm" href="contacto.html">Contacto</a></li>
+          </ul> <!--al hacer hover los iconos se hacen un poco mas pequeños-->
+          <div class="flex align-center justify-center overflow-hidden">
+            <a href="https://www.youtube.com/c/ArcadeLevels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-youtube brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.instagram.com/arcade_levels/" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-instagram brick-bounce" id="coin-add"></i>
+              <img  class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+            <a href="https://www.tiktok.com/@arcade_levels" target="_blank" class="relative brick-wrapper red-hover pointer padding-li-nav">
+              <img height="13px" width="auto" class="absolute coin-nav" src="Coin.gif" alt="coin">
+              <i class="fa-brands fa-tiktok brick-bounce" id="coin-add"></i>
+              <img class="absolute mario-link" src="mario-8bit.png" alt="mario-8bit">
+            </a>
+          </div>
+      </nav>
+      <img src="yoshi-peeking.png" height="55px" class="absolute yoshi-peeking pointer peeking" alt="" draggable="false">
+      <img height="20px" width="auto" class="absolute coin-peeking" src="Coin.gif" alt="coin">
+      <div class="absolute flex align-center padding-2 relative brdr-rd-bottom-2" id="coin-counter-wrapper">
+        <img class="counter-coin" height="20px" src="coin.png" alt="coin" draggable="false">
+        <div>x</div><div id="coin-counter"></div>
+        <div class="relative">
+          <img src="marioblock.png" alt="mario block" height="18px" class="cursor-interr question-img-coins" >     
+          <div class="absolute grey-bg-semitrans text-small-1 question-coin-hover">
+            <p>Hemos escondido monedas por toda la página.</p>
+            <p>Cada vez que consigas una moneda, <br> se sumará al contador global.</p>
+            <p>¡Encuentralas todas y <br>ayúdanos a conseguir 1 Millón de Monedas!</p>
+            <!--poner una imagen?-->
+          </div>
+        </div>
+
+      </div>
+    </header>
+  
+    <main class="flex">
+        <div style="width:100%; height: calc(100vh - 540px); display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <div>¡Página en construcción!</div>
+            <img src="construccion.png" alt="" height="200px" class="pixel-art">
+        </div>
+
+    </main>
+  
+    <footer class="dark-blue-bg flex flex-column mage-font relative text-kinda-big">
+      <hr class="red-hr-footer">
+      <div class="flex justify-between footer-1">
+        <div class="flex-1 padding-lr-footer">
+          <img src="footerlogo.png" alt="Arcade Levels Logo" height="50px" class="margin-auto">
+          <div>
+            Diseñado y Programado por Anémona SL <br>
+            Contacto: <a href="mailto:guillermobernallou@gmail.com">guillermobernallou@gmail.com</a> <br>
+            Redes:
+          </div>
+          <div class="flex justify-evenly text-big-3">
+            <a href="#" target="_blank"><i class="fa-brands fa-github text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin text-black white-hover transitions-all-ease-0-2s"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook text-black white-hover transitions-all-ease-0-2s"></i></a>
+          </div>
+        </div>
+        <div class="flex-1 padding-lr-footer">
+          <h5 class="text-center text-kinda-big">Contacto</h5>
+          <div class="flex">
+            <i class="fa-solid fa-house text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="https://goo.gl/maps/jMw6Us4fk7sH8wWC8" target="_blank">Carretera Valencia KM 7.8 Nave 72A 50410 - Cuarte de Huerva - Zaragoza</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-phone text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="tel:+3466362429">+34 663 624 29</a>
+          </div>
+          <div class="flex">
+            <i class="fa-solid fa-envelope text-black white-hover transitions-all-ease-0-2s"></i>
+            <a href="mailto:contacto@arcadelevels.com">contacto@arcadelevels.com</a>
+          </div>
+        </div>
+        <div class="text-center flex-1 padding-lr-footer">
+          <h5 class="text-kinda-big">Horario de apertura/Opening hours</h5>
+          <div>Sábado/Saturday:</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+          <div>Domingo/Sunday</div>
+          <div>10:00-14:00</div>
+          <div>17:00-21:00</div>
+        </div>
+      </div>
+      <div class="flex flex-column medium-blue-bg footer-xtra relative">
+        <img src="footer-arcade.png" alt="Arcade 8bit" class="absolute footer-arcade" height="75px">
+        <hr class="footer-hr-2">
+        <div class="flex justify-evenly footer-xtra-margin">
+          <div>
+            Arcade Levels SL  -  CIF B99558611 
+          </div>
+          <div>Copyright © 2022 por Arcade Levels. Todos los derechos reservados</div>
+        </div>
+      </div>
+      <!---
+      <div class="absolute flex">
+        <img src="8bitPjs/spiderman.png" alt="Spiderman 8bit" draggable="false" class="pixel-art">
+      </div>-->
+    </footer>
+    <script type="module" src="/imports.js"></script>
+    <script type="module" src="/contador.js"></script>
+  </body>
+</html>
+<!--<iframe src="http://silph.co/" height="1000px" width="1000"></iframe>-->
